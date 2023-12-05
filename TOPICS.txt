@@ -1,0 +1,16 @@
+sequence structure
+
+selection structure: if-else
+
+loop structure:
+
+
+-statement
+-input
+-variables and data types
+-functions
+-array
+-object
+-output
+
+
