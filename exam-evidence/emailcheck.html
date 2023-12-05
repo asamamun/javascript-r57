@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Write a program which will test user email address. When the script 10
+executes, a prompt asks user to enter email address. If the script logic finds ‘@ ‘and
+‘.’ symbols in email address that is entered then the output will be “ Email Address is
+correct” otherwise “ Email Address is Wrong”.
+    </p>
+    <script>
+        let em = prompt("enter email address");//abc@gmaicom
+        let at = em.indexOf("@");
+        let dot = em.indexOf(".");
+        //console.log(at + dot)
+if(at != -1 && dot != -1){
+    console.log("Email Address is correct")
+}
+else{
+    console.log("Email Address is Wrong")
+}
+    </script>
+</body>
+</html>

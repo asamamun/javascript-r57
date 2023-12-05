@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #maindiv {
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+            /* background-color: red; */
+            /* border: 3px solid crimson; */
+        }
+
+        .display {
+            width: 278px;
+            height: 50px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0;
+            margin-top: 5px;
+            border: 7px solid rgba(32, 66, 218, 0.128);
+            border-radius: 10px;
+            background-color: cornsilk;
+            font-size: 1.7rem;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .btn {
+            width: 70.5px;
+            height: 60px;
+            display: inline-block;
+            margin: 2px auto;
+            border-radius: 25px;
+            font-size: 1.3rem;
+
+        }
+
+        .div1 {
+            display: block;
+            margin: auto;
+        }
+        .btn:hover{
+            box-shadow: 0px 0px 2px 5px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="maindiv">
+        <input type="text" id="display" class="display" readonly><br>
+        <div class="div1">
+            <button class="btn" onclick="reset()">C</button>
+            <button class="btn" onclick="calc()">%</button>
+            <button class="btn" onclick="backspace()">←</button>
+            <button class="btn" onclick="show('/')">/</button>
+        </div>
+        <div>
+            <button class="btn" onclick="show(7)">7</button>
+            <button class="btn" onclick="show(8)">8</button>
+            <button class="btn" onclick="show(9)">9</button>
+            <button class="btn" onclick="show('*')">*</button>
+        </div>
+        <div>
+            <button class="btn" onclick="show(4)">4</button>
+            <button class="btn" onclick="show(5)">5</button>
+            <button class="btn" onclick="show(6)">6</button>
+            <button class="btn" onclick="show('-')">-</button>
+        </div>
+        <div>
+            <button class="btn" onclick="show(1)">1</button>
+            <button class="btn" onclick="show(2)">2</button>
+            <button class="btn" onclick="show(3)">3</button>
+            <button class="btn" onclick="show('+')">+</button>
+        </div>
+        <div>
+            <button class="btn" onclick="show('00')">00</button>
+            <button class="btn" onclick="show(0)">0</button>
+            <button class="btn" onclick="show('.')">.</button>
+            <button class="btn" onclick="calc()">=</button>
+        </div>
+
+
+    </div>
+    <script>
+        function show(d) {
+            document.getElementById("display").value += d;
+        }
+        function calc() {
+            document.getElementById("display").value = eval(document.getElementById("display").value);
+        }
+        function reset() {
+            document.getElementById("display").value = "";
+        }
+        function backspace(){
+            let currentDisplay = document.getElementById('display').value;
+        document.getElementById('display').value = currentDisplay.slice(0, -1);
+        }
+    </script>
+</body>
+
+</html>

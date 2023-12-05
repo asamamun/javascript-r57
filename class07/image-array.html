@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changeImage()">Add Images</button>
+    <h3>New Comer in the Container</h3>
+    <img id="newImage" src="" alt="">
+    <h3>All Images</h3>
+    <div id="picsum">
+        <img src="https://picsum.photos/id/237/200/300" alt="">
+    </div>
+    
+    <script>
+        function changeImage(){
+            let rand = parseInt(Math.random()*1000);
+            let link = "https://picsum.photos/id/"+rand+"/200/300";
+            // console.log(link);
+            document.getElementById("newImage").src = link;
+            document.getElementById("picsum").innerHTML += '<img src="'+link+'" alt="">'
+        }
+    </script>
+</body>
+</html>

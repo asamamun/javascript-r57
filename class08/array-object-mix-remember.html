@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>If you create associative array in javascript, javascript will treat that array as object. So, array methods and properties will not work in associative array in javascript </h1>
+    <script>
+        var color = ["red", "green", "blue", "yellow"];
+        console.log(color);
+
+        var country = [];
+        country["bangladesh"] = "Dhaka";
+        country["japan"] = "Tokyo";
+        country["india"] = "Delhi";
+        country["australia"] = "Sydney";
+        country["burma"] = "Yangun";
+        // console.log(country);
+/*         for (const key in country) {
+            console.log(key , country[key]);
+        } */
+        var k = Object.keys(country);
+        console.log(k.sort());
+        k.forEach(k => {
+           document.write(k + " " + country[k] + "<br>"); 
+        });
+    </script>
+</body>
+</html>

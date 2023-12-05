@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = prompt("How many numbers you want to sort?");//
+        let num = [];
+        for (let i = 0; i < n; i++) {
+            num.push(Number(prompt("Enter Number: " + i)));            
+        }
+        console.log(num)
+        num.sort(function(a, b) {return b - a;})//descending order
+        // num.sort(function(a, b) {return a - b;})//ascending order
+        console.log(num)
+
+    </script>
+</body>
+</html>

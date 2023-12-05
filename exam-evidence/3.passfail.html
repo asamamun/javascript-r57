@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="mcq" placeholder="mcq">
+    <input type="text" id="desc" >
+    <input type="text" id="ev"> <button onclick="check()">Calculate</button>
+    <hr>
+    <h1 id="result"></h1>
+    <script>
+        function check(){
+            let mcq = document.getElementById("mcq").value;
+            let d = document.getElementById("desc").value;
+            let e = document.getElementById("ev").value;
+            // if(mcq >=80 && d >= 60 && e >=60){
+            if(mcq >=80 || d >= 60 || e >=60){
+                document.getElementById("result").innerHTML = "passed";
+            }
+            else{
+                document.getElementById("result").innerHTML = "failed";
+            }
+        }
+    </script>
+</body>
+</html>

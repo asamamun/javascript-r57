@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="">
+            <div><label for="">subject 01</label>
+            <select name="" id="inval1">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result01"></label></div>
+            <div><label for="">subject 02</label>
+            <select name="" id="inval2">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result02"></label></div>
+            <div><label for="">subject 03</label>
+            <select name="" id="inval3">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result03"></label></div>
+            <div><label for="">subject 04</label>
+            <select name="" id="inval4">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result04"></label></div>
+            <div><label for="">subject 05</label>
+            <select name="" id="inval5">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result05"></label></div>
+            <div><label for="">subject 06</label>
+            <select name="" id="inval6">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result06"></label></div>
+
+            <div>
+                <input type="button" value="Result" onclick="calc()">
+                <label for="">Total CGPA:</label>
+                <label for="" id="totalcgpa"></label>
+            </div>
+        </form>
+    </div>
+<script>
+    var sub1=0,sub2=0,sub3=0,sub4=0,sub5=0,sub6 = 0;
+ function calc() {
+    var a=document.getElementById("inval1").value;
+    var b=document.getElementById("inval2").value;
+    var c=document.getElementById("inval3").value;
+    var d=document.getElementById("inval4").value;
+    var e=document.getElementById("inval5").value;
+    var f=document.getElementById("inval6").value;    
+    //a
+    if (a=="AAA") document.getElementById("result01").innerHTML= sub1 = 5;
+    else if(a=="AA")document.getElementById("result01").innerHTML= sub1 = 4.5;
+    else if (a=="A")document.getElementById("result01").innerHTML= sub1 =4;
+    else if (a=="BB") document.getElementById("result01").innerHTML= sub1 =3.5;
+    else document.getElementById("result01").innerHTML=sub1=3;
+    //b
+    if (b=="AAA") document.getElementById("result02").innerHTML= sub2 = 5;
+    else if(b=="AA")document.getElementById("result02").innerHTML= sub2 = 4.5;
+    else if (b=="A")document.getElementById("result02").innerHTML= sub2 =4;
+    else if (b=="BB") document.getElementById("result02").innerHTML= sub2 =3.5;
+    else document.getElementById("result02").innerHTML=sub2=3;
+       
+    
+    var cgpa = (sub1 + sub2 + sub3 + sub4 + sub5 + sub6)/6;
+    document.getElementById("totalcgpa").innerHTML = cgpa.toFixed(2);
+
+
+ }
+
+</script>
+
+
+
+</body>
+</html>

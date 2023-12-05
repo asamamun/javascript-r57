@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>push</li>
+        <li>unshift</li>
+        <li>pop</li>
+        <li>shift</li>
+    </ul>
+    <script>
+        var division = ["Dhaka","Chittagong"];
+        console.log(division);
+        division.push("Barishal");//insert into array at the end
+        console.log(division);
+        division.unshift("Rangpur");//insert into array at the beginning
+        division.unshift("Rajshahi");//insert into array at the beginning
+        division.push("Sylhet");//insert into array at the beginning
+        console.log(division);
+        //pop : removed values from array from end
+        console.log(division.pop())
+        console.log(division.shift())
+        console.log(division.pop())
+        console.log(division)
+        //concat
+        var newdiv = division.concat("noakhali");
+        console.log(newdiv);
+
+    </script>
+</body>
+</html>

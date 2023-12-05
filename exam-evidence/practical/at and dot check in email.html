@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<script>
+var em = prompt("Email?","abc@gmail.com");
+// var atfound = em.indexOf("@");
+// var dotfound = em.indexOf(".");
+// if(atfound != -1 && dotfound != -1){
+// 	alert("Correct");
+// 	}
+// else {alert("incorrect");}
+var atfound = em.indexOf("@");//idb@gmail.com //3
+var dotfound = em.indexOf(".");//abcd. //4
+console.log(dotfound);
+if(atfound == -1){ document.write("@ missing");}
+if(dotfound == -1){ document.write("dot(.) missing");}
+</script>
+</body>
+</html>

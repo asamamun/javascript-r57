@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        input {
+            height: 50px;
+            width: 191px;
+            text-align: right;
+            font-size: 1.2em;
+        }
+
+        button {
+            width: 47px;
+            height: 40px;
+            text-align: center;
+            border: 5px solid darkcyan;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        body {
+            width: 200px;
+            margin: 0 auto;
+            margin-top: 20px;
+            border: 10px solid black;
+            border-radius: 10px;
+            background-color: rgb(113, 128, 91);
+
+        }
+
+        div {
+            background-color: rgba(28, 204, 210, 0.089);
+        }
+
+        button:hover {
+            border-color: rgb(243, 13, 13);
+            background-color: green;
+            color: white;
+        }
+
+        p {
+            text-shadow: 1px 1px brown;
+            margin: 0;
+            background-color: bisque;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        pre {
+            text-shadow: 1px 1px darkcyan;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <pre
+            style="margin: 0;background-color: bisque;"><b><img src="calculator-logo1.png" height="20px" width="60px" alt="">         12 Digit</b></pre>
+        <input type="text" id="display">
+        <br>
+        <p><b> Smart choice</b></p>
+        <button onclick="on()">ON</button>
+        <button onclick="reset()">C</button>
+        <button onclick="reset()">OFF</button>
+        <button onclick="root()">√ </button>
+        <!-- <button id="p" class="oper" onClick="getmep()">%</button> -->
+        <br>
+        <button onclick="show(7)">7</button>
+        <button onclick="show(8)">8</button>
+        <button onclick="show(9)">9</button>
+        <button onclick="show('*')">*</button><br>
+        <button onclick="show(4)">4</button>
+        <button onclick="show(5)">5</button>
+        <button onclick="show(6)">6</button>
+        <button onclick="show('-')">-</button><br>
+        <button onclick="show(1)">1</button>
+        <button onclick="show(2)">2</button>
+        <button onclick="show(3)">3</button>
+        <button onclick="show('+')">+</button> <br>
+        <button onclick="show(0)">0</button>
+        <button onclick="show('.')">.</button>
+        <button onclick="calc()">=</button>
+        <button onclick="show('/')">/</button><br>
+    </div>
+    <script>
+        function show(n) {
+            document.getElementById("display").value += n;
+        }
+        function on() {
+            document.getElementById("display").value = 0;
+        }
+        function root() {
+            var displayval = document.getElementById("display").value;
+            var rootval = Math.sqrt(displayval);
+            document.getElementById("display").value = rootval;
+        }
+
+        function calc() {
+            document.getElementById("display").value = eval(document.getElementById("display").value);
+        }
+
+        function reset() {
+            document.getElementById("display").value = "";
+
+        }
+
+    </script>
+</body>
+
+</html>

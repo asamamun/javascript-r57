@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var students = {
+    JohnDoe: { 
+        name: "John Doe", 
+        id: "001", 
+        class: "10A", 
+        bloodgroup: "A+", 
+        phone: "123-456-7890" 
+    },
+    "Jane Smith": { 
+        name: "Jane Smith", 
+        id: "002", 
+        class: "10B", 
+        bloodgroup: "B-", 
+        phone: "987-654-3210" 
+    },
+    "Alice Johnson": { 
+        name: "Alice Johnson", 
+        id: "003", 
+        class: "10A", 
+        bloodgroup: "O+", 
+        phone: "555-123-4567" 
+    },
+    "Eva Davis": { 
+        name: "Eva Davis", 
+        id: "005", 
+        class: "10B", 
+        bloodgroup: "A-", 
+        phone: "444-555-6666" },
+}
+console.log(students.JohnDoe.class);
+console.log(students["Jane Smith"].class);
+var person = {
+    firstName:"John", 
+    lastName:"Doe", 
+    age:50, 
+    eyeColor:"blue",
+    fullName : function() {
+        //this means current person(object)
+    return this.firstName + " " + this.lastName;
+  }
+};
+console.log("I am " + person.firstName + " " + person.lastName + "." + "I am " + person.age + " years old ")
+console.log("I am " + person.fullName() + "." + "I am " + person.age + " years old ")
+console.log(person['age']);
+console.log(person.fullName);
+
+    </script>
+    <hr>
+    <script>
+        //create a division object where property name will be division name and value will be total district.
+        var division = {
+dhaka:12,
+chittagong:8,
+khulna:12,
+rajshahi:11,
+rangpur:10,
+}
+console.log(window.division)
+    </script>
+</body>
+</html>

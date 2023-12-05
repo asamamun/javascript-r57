@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Fetch API interface allows web browser to make HTTP requests to web servers.</h1>
+    <code>
+        fetch(file or url)
+        .then(x => x.text())
+        .then(y => myDisplay(y));
+    </code>
+    <ul id="mydata">
+
+    </ul>
+    <script>
+        function show(arr){
+            let html = ``;
+           arr.forEach(e => {
+            html += `<li>${e}</li>`;
+            // alert(html);
+           }); 
+           document.getElementById("mydata").innerHTML = html;
+        }
+        //AJAX: Asynchronous Javascript And Xml
+        fetch("data.php")
+        .then(x => x.json())
+        .then(y => {            
+            console.log(y)
+            show(y);
+            console.log("works when fetch ends successfully");
+        });
+        console.log("last line");
+    </script>
+</body>
+</html>

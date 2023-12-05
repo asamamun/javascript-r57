@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Quastion-3</title>
+<script language="javascript">
+function calculate(form)
+{
+	var n=form.t1.value;
+	form.result.value="";
+	flag=0;
+	if(n=="")
+	{
+		form.result.value="Input the number in above text field."
+		flag=2;
+		form.t1.focus();
+	}
+	if(isNaN(n) || n<0)
+	{
+		form.result.value=n+" is not a valid number."
+		flag=2;
+		form.t1.focus();
+	}
+	if(n==1||n==2)
+	{
+		form.result.value=n+" is prime number."
+	}
+	for(i=2;i<=n/2+1;i++)
+	{
+		m=n%i;
+		if(m==0)
+		{
+			form.result.value=n+" is not prime number. It is dividable by "+i+"."
+			flag=1;
+			break;
+		}
+	}
+	if(flag==0)
+	{
+	form.result.value=n+" is a prime number";
+	}
+}
+</script>
+
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action=""><fieldset><legend>Prime Number? Or Not Prime.</legend>
+    <table width="200" border="1" bgcolor="#9999FF">
+      <tr>
+        <td>Please Enter a Number </td>
+      </tr>
+      <tr>
+        <td><input name="t1" type="text" id="t1" size="7" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" name="Button" value="Calculate" onclick="calculate(this.form)" /></td>
+      </tr>
+      <tr>
+        <td><input name="result" type="text" id="result" size="50" /></td>
+      </tr>
+    </table>
+</fieldset>
+</form>
+</body>
+</html>

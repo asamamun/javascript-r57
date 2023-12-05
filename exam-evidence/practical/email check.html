@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Check for @ sign in email</p>
+<p id="demo"></p>
+<script>
+    var str = prompt("email?");
+    var n = str.indexOf("@");
+    if(n == -1){
+     document.getElementById("demo").innerHTML = "no @ sign";
+    }
+    else {
+     document.getElementById("demo").innerHTML = "@ found";
+    }
+
+</script>
+
+</body>
+</html>

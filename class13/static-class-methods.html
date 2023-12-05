@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>If your class has static methods you dont have to create object to call that method. You can call the method directly with className.methodName()</h1>
+    <script>
+        // let m = Math.min(1,2,3,4,5);
+        class myMath{
+            static add(a,b){ return a+b;}
+        }
+        console.log(myMath.add(3,5));
+    </script>
+</body>
+</html>

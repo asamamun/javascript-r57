@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location API</title>
+</head>
+<body>
+    <h3>Latitude: <span id="lat"></span></h3>
+    <h3>Longitude: <span id="lng"></span></h3>
+    <h3>Time: <span id="t"></span></h3>
+    <script>
+        function show(p){
+            const date = new Date(p.timestamp);
+            document.getElementById("lat").innerHTML = p.coords.latitude;
+            document.getElementById("lng").innerHTML = p.coords.longitude;
+            document.getElementById("t").innerHTML = date;
+        }
+        //when you call getCurrentPosition it can do two things, one is if it can retrieve the current position it will pass the information to function a, two is if it cannot retrieve the current position it will pass the information to function e.
+        navigator.geolocation.getCurrentPosition(a,e);
+        function a(p){
+            console.log(p);
+            show(p);
+        }
+        function e(err){}
+    </script>
+</body>
+</html>

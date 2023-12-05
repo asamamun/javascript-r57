@@ -1,0 +1,16 @@
+TODO: show products and add to cart
+1. fetch products from APIs
+2. pass the products data to a function
+3. that function will populate all the categories from the data and will show all the products
+4. create pagination for the products to show paged product
+5. when user click categories pass the category value to a function to show that category products
+6. create single product page to show single product
+
+WORK:
+we created
+___________
+4. fetchCatProducts: getch category wise products from APIs
+3. showproducts: show products in html
+3. createNav: catete navigation of categories.
+2. populate: populate received products and separate categories in Set. After getting all categories we will show the categories in HTMl using createNav function. And products will be shown in html using showproducts function.
+1. loadData: when page load complete loadData will call.loadData will fetch product data from API and call populate function.

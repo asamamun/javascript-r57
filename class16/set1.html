@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .product {
+            width: 200px;
+            display: inline-block;
+        }
+
+        .product img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body onload="loadData(0)">
+    <nav id="catnav"></nav>
+    <hr>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="loadData(0)">Start</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="loadData(0)">1</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="loadData(20)">2</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="loadData(40)">3</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="loadData(60)">4</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="loadData(80)">5</a></li>
+          <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="loadData(80)">End</a></li>
+        </ul>
+      </nav>
+    <div id="productContainer"></div>
+    <script>
+        let cat;
+        function fetchCatProducts(catname) {
+            fetch('https://dummyjson.com/products/category/' + catname)
+                .then(res => res.json())
+                .then(d => { showproducts(d.products) });
+        }
+        function showproducts(d) {
+            let html = ``;
+            d.forEach(e => {
+                html += `<div class="product"> <img src="${e.thumbnail}"/> <a href="set1-single.html?id=${e.id}">${e.title} </a><br> Price:$${e.price} </div>`;
+            })
+            document.getElementById("productContainer").innerHTML = html;
+        }
+
+        function createNav() {
+            let html = ``;
+            cat.forEach(e => {
+                html += `<a href="javascript:void(0)" onclick="fetchCatProducts('${e}')">${e}</a> | `;
+            })
+            document.getElementById("catnav").innerHTML = html;
+        }
+        function populate(data) {
+            cat = new Set();
+            data.products.forEach(e => {
+                cat.add(e.category);
+            });
+            //console.log(cat);
+            createNav();
+            showproducts(data.products);
+        }
+        function loadData(n) {
+            fetch('https://dummyjson.com/products?limit=20&skip='+n)
+                .then(res => res.json())
+                .then(d => populate(d));
+        }
+
+    </script>
+</body>
+
+</html>

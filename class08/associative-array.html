@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Create an associative array of 5 elements where index will be country name and value will be corresponding capital name. Sort the array by country name and print.</h3>
+    <script>
+        //var color = ["red", "green", "blue", "yellow"];//numeric array
+        //associative array of 5 elements in javascript
+        // var country = new Array();
+        var country = [];
+        country["bangladesh"] = "Dhaka";
+        country["japan"] = "Tokyo";
+        country["india"] = "Delhi";
+        country["australia"] = "Sydney";
+        country["burma"] = "Yangun";
+        var k = Object.keys(country);//k has only country keys in an array
+        // console.log(k);
+        k.sort();
+        // console.log(k);
+        k.forEach(e => {
+            document.write(e +" = "+ country[e] + "<br>");
+        });
+        
+
+
+
+    </script>
+</body>
+</html>

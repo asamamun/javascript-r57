@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="">
+        <label for="marks">Marks</label>
+        <input type="text" id="marks" placeholder="your marks">
+        <input type="button" value="Calculate" onclick="calculate()">
+    </form>
+    <hr>
+    <h1 class="text-center" id="studentresult"></h1>
+    <script>
+        //window.print
+        function calculate(){
+            var marks = document.getElementById("marks").value;
+            var result;
+            // console.log(marks);
+            if (marks >= 90) {
+                result = "A+";
+            } else {
+                if (marks >= 80) {
+                    result = "A";
+                } else {
+                     if (marks >= 60) {
+                        result = "B";
+                     } else {
+                        result = "F"; 
+                     }
+                }
+            }
+            //if else end
+            document.getElementById("studentresult").innerHTML = "You got " + result;
+
+        }
+    </script>
+</body>
+</html>

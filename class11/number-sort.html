@@ -1,0 +1,16 @@
+<script>
+    /*
+If the result is negative, a is sorted before b.
+
+If the result is positive, b is sorted before a.
+
+If the result is 0, no changes are done with the sort order of the two values.
+*/
+//ascending sort    
+let sort = function (a, b) { return a - b }
+//descending sort
+// let sort = function (a, b) { return b - a }
+    const points = [40, 100, 1, 5, 25, 10];
+    points.sort(sort);
+    console.log(points);
+</script>

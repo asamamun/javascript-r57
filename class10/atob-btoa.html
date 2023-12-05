@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 150px;
+            border: 5px solid gray;
+        }
+
+        button {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>  
+    <h1>Secret Conversation with btoa(encrypt) and atob(decrypt)</h1>
+    <textarea name="a" id="texta" onkeyup="enc()"></textarea>
+    <button onclick="enc()">ENCODE</button>
+    <button onclick="dec()">DECODE</button>
+    <textarea name="b" id="textb"></textarea>
+    <script>
+        //atob and btoa
+        let idb = "Islamic Development Bank";
+        let sajek = "The mist of the clouds with the mountains. Megharashi smiles, red, greenhouses on both sides of the road - Sajek Valley. I am taking about Sajek Valley in the Rangamati district of Chittagong Hill-Tracts area in Bangladesh which is called the roof of Rangamati.It is famous for its orange cultivation. That's why Sajek Valley in Rangamati takes place as the number five on our list of the best places to visit in Bangladesh."
+        // console.log(btoa(sajek));//SXNsYW1pYyBEZXZlbG9wbWVudCBCYW5r
+        function enc(){
+            let texta = document.getElementById("texta").value;
+            document.getElementById("textb").value =  btoa(texta)//encode
+        }
+        function dec(){
+            let texta = document.getElementById("texta").value;
+            document.getElementById("textb").value =  atob(texta)//decode
+        }
+
+    </script>
+</body>
+
+</html>

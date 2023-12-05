@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var grd = prompt("Input your point and know your Grade.");
+        if (grd > 5) {
+            alert("Invalid!");
+        }
+        else {
+            if (grd == 5) {
+                alert("A+");
+            }
+            else {
+                if (grd >= 4.5) {
+                    alert("A");
+                }
+                else {
+                    if (grd >= 4) {
+                        alert("A-");
+                    }
+                    else {
+                        if (grd >= 3.5) {
+                            alert("B");
+                        }
+                        else {
+                            if (grd >= 3) {
+                                alert("B-");
+                            }
+                            else {
+                                alert("You Fail");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" name="" id="usernum">
+        <input type="button" value="Calc" onclick="sq()">
+    </form>
+    <h1 id="result"></h1>
+    <script>
+        function squarenum(n){ return n*n;}
+        function sq(){
+            let x = document.getElementById("usernum").value;
+            let result = squarenum(x);
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

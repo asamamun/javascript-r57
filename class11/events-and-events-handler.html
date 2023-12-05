@@ -1,0 +1,33 @@
+<script src="template.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    document.write(generatehead("events and event handlers"));
+</script>
+<body ononline="showstatus('you are online')" onoffline="showstatus('you are offline')">
+    <h1>events: mouse, keyboard, page, form, net</h1>
+    <h1>event handler: The function or code block that handle the event</h1>
+    <input type="text" id="maintext" onkeyup="duplicate(this)">
+    <input type="text" onblur="duplicate2(this)" onfocus="console.log('5')">
+    <input type="button" value="Print" onclick="printthispage()">
+    <p id="res">11</p>
+    <hr>
+    <p id="res2">22</p>
+    <script>
+        function duplicate(t) {
+            document.getElementById("res").innerHTML = t.value;
+            // console.log(t.value);
+        }
+        function duplicate2(t) {
+            console.log(t.value);
+        }
+        function printthispage() {
+            document.getElementById("res2").innerHTML = document.getElementById("maintext").value;
+            window.print();
+        }
+        function showstatus(m){
+            alert(m);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <form class="form">
+            <input type="date" class="form-control" id="getDate" onchange="getDateFunc()">
+        </form>
+    </div>
+    <div class="container mt-4">
+        <div id="toDayNews"></div>
+    </div>
+    <script>
+        function getDateFunc(){
+            getDate = document.getElementById("getDate").value;
+            getArray = getDate.split("-");
+            return newsList(getArray[1], getArray[2]);
+        }
+        
+        async function newsList(m = 1, d = 1) {
+            var html = "";
+            const response = await fetch("https://byabbe.se/on-this-day/"+m+"/"+d+"/events.json");
+            const news = await response.json();
+            console.log(news);
+            //console.log(news.events.length);
+            for (let index = 0; index < news.events.length; index++) {
+                html += `<div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                <img src="https://picsum.photos/id/${m}${index}/200/200" class="img-fluid rounded-start" alt="..." width="100%">
+                                </div>
+                                <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Year: ${news.events[index].year}</h5>
+                                    <p class="card-text">${news.events[index].description}</p>
+                                    <p class="card-text"><small class="text-muted">NO: ${index}</small></p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>`;
+            }
+            document.getElementById("toDayNews").innerHTML = html;
+            //console.log(html);
+        }
+        newsList()
+    </script>
+</body>
+
+</html>

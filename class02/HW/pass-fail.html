@@ -1,0 +1,53 @@
+take grade from user.
+    <ul>
+        <li>if grade is 5 show A+,</li>
+        <li>if grade is >= 4.5 show A</li>
+        <li>if grade is >= 4 show A-</li>
+        <li>if grade is >= 3.5 show B</li>
+        <li>if grade is >= 3 show B-</li>
+        <li>else show F</li>
+    </ul>
+    <div>
+        <form action="">
+            <h4>Grade point to letter</h4>
+            <hr>
+            <label in valiedor="">Number out of 5:</label>
+            <input type="text" pattern="[0-5]" id="inval" placeholder="please enter number">
+            <label for="">Result is Letter : </label>
+            <label for="" id="result"></label>
+            <hr>
+            <input type="button" value="Result" onclick="calc()">
+        </form>
+    </div>
+<script>
+    // this script is prompt and alert
+    var marks = prompt("Enter the grade point out of 5");
+    if(marks > 5)
+    {alert("your number invalied")}
+    else if( marks == 5)
+    {alert("Your Grade Letter is 'A+'")}
+    else if( marks >= 4.5)
+    {alert("Your Grade Letter is 'A'")}
+    else if( marks >= 4)
+    {alert("Your Grade Letter is 'A-'")}
+    else if( marks >= 3.5)
+    {alert("Your Grade Letter is 'B'")}
+    else if( marks >= 3)
+    {alert("Your Grade Letter is 'B-'")}
+    else {alert("You Failed!!!")}
+    // this script is prompt and alert "end"
+    // 
+    // this script is browser form 01
+    function calc(){
+        var x = document.getElementById("inval").value;
+
+        if(x > 5)         {document.getElementById("result").innerHTML = "Invalied"}
+        else if (x == 5)  {document.getElementById("result").innerHTML = "A+"}
+        else if (x > 4.5) {document.getElementById("result").innerHTML = "A" }
+        else if (x > 4)   {document.getElementById("result").innerHTML = "A-" }
+        else if (x > 3.5) {document.getElementById("result").innerHTML = "B" }
+        else if (x > 3)   {document.getElementById("result").innerHTML = "B-" }
+        else              {document.getElementById("result").innerHTML = "Failed"}
+    }
+    // this script is browser form 01 "end"
+</script>

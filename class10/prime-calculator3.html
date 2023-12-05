@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .g { color: green;}
+        .r { color: red}
+    </style>
+</head>
+<body>
+    <script>
+        function isPrime(n){
+                let prime = true;
+                for (let i = 2; i < n; i++) {
+                    if(n%i == 0) prime = false;                
+                }
+                return prime;
+            }
+    
+            for (let index = 2; index <= 1000; index++) {
+               if(isPrime(index)){ 
+                document.write("<p class='g'>the number " + index + " is prime </p>");
+            }
+               else{
+                document.write("<p class='r'>the number " + index + " is not prime </p>");
+               }
+                
+            }
+    </script>
+</body>
+</html>

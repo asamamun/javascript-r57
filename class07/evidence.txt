@@ -1,0 +1,14 @@
+1. Find out prime number. 15
+2.Create an associative array of 5 elements where index will be country name and value will be
+corresponding capital name. Sort the array by country name and print. 15
+3. Find out largest number among three using logic?
+15
+
+4. Oral
+
+1. Take an input from prompt box and check whether a number is prime or not?
+
+2. If a student get 60% marks is graded “B’,if get 70% is graded “A”,if get 80% then
+get A+
+
+3. Find out largest value among three.

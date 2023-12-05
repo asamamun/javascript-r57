@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Total: <span id="total"></span> <br>
+    VAT: 5% <br>
+    Total With VAT: <span id="totalwithvat"></span> <br>
+    Service Charge: <span id="deliverycharge"></span> <br>
+    Net Pay: <span id="netpay"></span> <br>
+    <script>
+        var total = Number(prompt("Your total Please"));
+        var totalwithvat = total*0.05 + total;
+        var netpay;
+        var message;
+        var scharge = 0;
+        if(totalwithvat >= 2000){
+            netpay = totalwithvat;
+            document.getElementById("total").innerHTML = total;
+            document.getElementById("totalwithvat").innerHTML = totalwithvat;
+            document.getElementById("deliverycharge").innerHTML = scharge;
+            document.getElementById("netpay").innerHTML = totalwithvat + scharge ;
+
+
+            // message = "Your service charge/ delivery charge is FREE!!!";
+
+        }
+        else{
+            netpay = totalwithvat + 60;
+            scharge = 60;
+            document.getElementById("total").innerHTML = total;
+            document.getElementById("totalwithvat").innerHTML = totalwithvat;
+            document.getElementById("deliverycharge").innerHTML = scharge;
+            document.getElementById("netpay").innerHTML = totalwithvat + scharge ;
+            // message = "Service or Delivery charge 60 taka included!";
+        }
+    </script>
+
+</body>
+</html>

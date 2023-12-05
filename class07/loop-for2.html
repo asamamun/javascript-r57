@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{ margin: 2px;}
+    </style>
+</head>
+<body>
+    <h1>Loop: loop has condition. when the condition is true loop will continue. when the condition is false loop will end</h1>
+    <div id="imagecontainer">
+
+    </div>
+    <script>
+        var html = "<h1>Images with Loop</h1>";
+        for (let index = 1; index <= 120; index++) {            
+            html  = html + '<img src="https://picsum.photos/id/'+index+'/100/80" alt="">'; 
+            // alert(html); 
+            document.getElementById("imagecontainer").innerHTML = html      
+        }
+        
+    </script>
+</body>
+</html>

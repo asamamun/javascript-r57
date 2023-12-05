@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Quastion-1</title>
+<script language="javascript">
+function createnewwindow()
+{
+	var short=document.forms[0];
+	with(short)
+	{
+	var name=txtname.value;
+	var contact=txtcontact.value;
+	var remark=txtremark.value;
+	var location=lstlocation.value;
+	var sex="";
+	for(i=0;i<rdsex.length;i++)
+		{
+			if(rdsex[i].checked)
+			{
+			sex=rdsex[i].value;
+			}
+		}
+	var course="";
+	var sl=1;
+	for(i=0;i<chkcourse.length;i++)
+		{
+			if(chkcourse[i].checked)
+			{
+				if(sl==1)
+					course+=chkcourse[i].value;
+				else
+					course+=", "+chkcourse[i].value;
+				sl+=1;
+			
+			}
+			
+		}
+	
+	//alert(course);
+	
+	var err="<ul>";
+	if (name=="")
+	err+="<li>name is required</li>";
+	if (contact=="")
+	err+="<li>Contact is required</li>";
+	if (sex=="")
+	err+="<li>sex is required</li>";
+	if (location=="Select")
+	err+="<li>Location is required</li>";
+	if (remark=="")
+	err+="<li>Remarks is required</li>";
+	if (course=="")
+	err+="<li>Course is required</li>";
+	err+="</ul>";
+	
+	if (err=="<ul></ul>")
+	{
+		var all="<table><caption style=\"background-color:red\">Information of the Students:</caption>";
+		all+="<tr><td>Name of the student:</td><th>"+name+"</th></tr>";
+		all+="<tr><td>Contact No.</td><th>"+contact+"</th></tr>";
+		all+="<tr><td>Gender</td><th>"+sex+"</th></tr>";
+		all+="<tr><td>Course Name</td><th>"+course+"</th></tr>";
+		all+="<tr><td>Location</td><th>"+location+"</th></tr>";
+		all+="<tr><td>Remarks</td><th>"+remark+"</th></tr>";
+		all+="</table>";
+		var newwindow=window.open("","output","scrollbars=0,width=400,height=250,resizable=no");
+		var s=newwindow.document;
+		//s.write("<html><head><link rel=\"stylesheet\" href=\"first.css\"/></head><body>");
+		s.write(all);
+		//s.write("</body>");
+		s.close();
+	}
+	
+	else
+	{		
+		document.getElementById("error").style.width=document.getElementById("Table1").width;
+		document.getElementById("error").innerHTML=err;
+	}
+	
+	}
+}
+</script>
+
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <p>
+  <div id="error" style="background:red"></div>
+  </p>
+  <table id="Table1" width="532px" border="1"  style="background-color:gray">
+    <tr>
+      <td width="53">Name</td>
+      <td width="144"><input name="txtname" type="text" id="txtname" /></td>
+      <td width="112">Contact</td>
+      <td width="286"><input name="txtcontact" type="text" id="txtcontact" /></td>
+    </tr>
+    <tr>
+      <td>Remark</td>
+      <td colspan="3"><textarea name="txtremark" cols="70" rows="5" id="txtremark"></textarea></td>
+    </tr>
+    <tr>
+      <td>Sex</td>
+      <td colspan="3"><input name="rdsex" type="radio" value="Male" />
+        Male
+        <input name="rdsex" type="radio" value="Female" />
+        Female
+      </td>
+    </tr>
+    <tr>
+      <td>Course</td>
+      <td colspan="3"><input name="chkcourse" type="checkbox" id="chkcourse" value="NT" />
+      NT
+      <input name="chkcourse" type="checkbox" id="chkcourse" value="IAD" />
+      IAD
+      <input name="chkcourse" type="checkbox" id="chkcourse" value="DDD" />
+      DDD
+      <input name="chkcourse" type="checkbox" id="chkcourse" value="ESAD" />
+      ESAD
+      </td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td colspan="3"><select name="lstlocation" id="lstlocation">
+        <option value="Select">Select</option>
+        <option value="Banani">Banani</option>
+        <option value="Dhanmondi">Dhanmondi</option>
+        <option value="Mirpur">Mirpur</option>
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="3"><input type="button" name="Button" value="Submit" onclick="createnewwindow()" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

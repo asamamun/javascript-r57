@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>HOME WORK 1: Show all the events in nice html format from the variable onthisday using necessary loop</H1>
+    <h1>HOME WORK 2: Advanced: if you can do the home work 1, create input type date and a submit button. when user select a day and submit the value, show that days events in nice HTMl format </h1>
+    <h1>https://byabbe.se/on-this-day/12/16/events.json</h1>
+    <div id="eventsContainer"></div>
+    <script>
+        let onthisday = `{
+    "wikipedia": "https://wikipedia.org/wiki/December_16",
+    "date": "December 16",
+    "events": [
+        {
+            "year": "714",
+            "description": "Pepin of Herstal, mayor of the Merovingian palace, dies at Jupille (modern Belgium). He is succeeded by his infant grandson Theudoald while his wife Plectrude holds actual power in the Frankish Kingdom.",
+            "wikipedia": [
+                {
+                    "title": "Pepin of Herstal",
+                    "wikipedia": "https://wikipedia.org/wiki/Pepin_of_Herstal"
+                },
+                {
+                    "title": "Merovingian dynasty",
+                    "wikipedia": "https://wikipedia.org/wiki/Merovingian_dynasty"
+                },
+                {
+                    "title": "Jupille-sur-Meuse",
+                    "wikipedia": "https://wikipedia.org/wiki/Jupille-sur-Meuse"
+                },
+                {
+                    "title": "Theudoald",
+                    "wikipedia": "https://wikipedia.org/wiki/Theudoald"
+                },
+                {
+                    "title": "Plectrude",
+                    "wikipedia": "https://wikipedia.org/wiki/Plectrude"
+                },
+                {
+                    "title": "Francia",
+                    "wikipedia": "https://wikipedia.org/wiki/Francia"
+                }
+            ]
+        },
+        {
+            "year": "755",
+            "description": "An Lushan revolts against Chancellor Yang Guozhong at Yanjing, initiating the An Lushan Rebellion during the Tang dynasty of China.",
+            "wikipedia": [
+                {
+                    "title": "An Lushan",
+                    "wikipedia": "https://wikipedia.org/wiki/An_Lushan"
+                },
+                {
+                    "title": "Chancellor of the Tang dynasty",
+                    "wikipedia": "https://wikipedia.org/wiki/Chancellor_of_the_Tang_dynasty"
+                },
+                {
+                    "title": "Yang Guozhong",
+                    "wikipedia": "https://wikipedia.org/wiki/Yang_Guozhong"
+                },
+                {
+                    "title": "Yanjing",
+                    "wikipedia": "https://wikipedia.org/wiki/Yanjing"
+                },
+                {
+                    "title": "An Lushan Rebellion",
+                    "wikipedia": "https://wikipedia.org/wiki/An_Lushan_Rebellion"
+                },
+                {
+                    "title": "Tang dynasty",
+                    "wikipedia": "https://wikipedia.org/wiki/Tang_dynasty"
+                }
+            ]
+        },
+        {
+            "year": "1431",
+            "description": "Hundred Years' War: Henry VI of England is crowned King of France at Notre Dame in Paris.",
+            "wikipedia": [
+                {
+                    "title": "Hundred Years' War",
+                    "wikipedia": "https://wikipedia.org/wiki/Hundred_Years%27_War"
+                },
+                {
+                    "title": "Henry VI of England",
+                    "wikipedia": "https://wikipedia.org/wiki/Henry_VI_of_England"
+                },
+                {
+                    "title": "King of France",
+                    "wikipedia": "https://wikipedia.org/wiki/King_of_France"
+                },
+                {
+                    "title": "Notre Dame de Paris",
+                    "wikipedia": "https://wikipedia.org/wiki/Notre_Dame_de_Paris"
+                }
+            ]
+        },
+        {
+            "year": "1497",
+            "description": "Vasco da Gama passes the Great Fish River, where Bartolomeu Dias had previously turned back to Portugal.",
+            "wikipedia": [
+                {
+                    "title": "Vasco da Gama",
+                    "wikipedia": "https://wikipedia.org/wiki/Vasco_da_Gama"
+                },
+                {
+                    "title": "Great Fish River",
+                    "wikipedia": "https://wikipedia.org/wiki/Great_Fish_River"
+                },
+                {
+                    "title": "Bartolomeu Dias",
+                    "wikipedia": "https://wikipedia.org/wiki/Bartolomeu_Dias"
+                }
+            ]
+        },
+        {
+            "year": "1575",
+            "description": "An earthquake with an estimated magnitude of 8.5 strikes Valdivia, Chile.",
+            "wikipedia": [
+                {
+                    "title": "1575 Valdivia earthquake",
+                    "wikipedia": "https://wikipedia.org/wiki/1575_Valdivia_earthquake"
+                }
+            ]
+        },
+        {
+            "year": "1598",
+            "description": "Seven-Year War: Battle of Noryang: The final battle of the Seven-Year War is fought between the China and the Korean allied forces and Japanese navies, resulting in a decisive allied forces victory.",
+            "wikipedia": [
+                {
+                    "title": "Japanese invasions of Korea (1592-98)",
+                    "wikipedia": "https://wikipedia.org/wiki/Japanese_invasions_of_Korea_(1592%E2%80%9398)"
+                },
+                {
+                    "title": "Battle of Noryang",
+                    "wikipedia": "https://wikipedia.org/wiki/Battle_of_Noryang"
+                }
+            ]
+        },
+        {
+            "year": "1653",
+            "description": "English Interregnum: The Protectorate: Oliver Cromwell becomes Lord Protector of the Commonwealth of England, Scotland and Ireland.",
+            "wikipedia": [
+                {
+                    "title": "Interregnum (England)",
+                    "wikipedia": "https://wikipedia.org/wiki/Interregnum_(England)"
+                },
+                {
+                    "title": "The Protectorate",
+                    "wikipedia": "https://wikipedia.org/wiki/The_Protectorate"
+                },
+                {
+                    "title": "Oliver Cromwell",
+                    "wikipedia": "https://wikipedia.org/wiki/Oliver_Cromwell"
+                },
+                {
+                    "title": "Lord Protector",
+                    "wikipedia": "https://wikipedia.org/wiki/Lord_Protector"
+                },
+                {
+                    "title": "Commonwealth of England",
+                    "wikipedia": "https://wikipedia.org/wiki/Commonwealth_of_England"
+                }
+            ]
+        },
+        {
+            "year": "1689",
+            "description": "Convention Parliament: The Declaration of Right is embodied in the Bill of Rights.",
+            "wikipedia": [
+                {
+                    "title": "Convention Parliament (1689)",
+                    "wikipedia": "https://wikipedia.org/wiki/Convention_Parliament_(1689)"
+                },
+                {
+                    "title": "Bill of Rights 1689",
+                    "wikipedia": "https://wikipedia.org/wiki/Bill_of_Rights_1689"
+                }
+            ]
+        },
+        {
+            "year": "1761",
+            "description": "Seven Years' War: After a four-month siege, the Russians under Pyotr Rumyantsev take the Prussian fortress of Kołobrzeg.",
+            "wikipedia": [
+                {
+                    "title": "Seven Years' War",
+                    "wikipedia": "https://wikipedia.org/wiki/Seven_Years%27_War"
+                },
+                {
+                    "title": "Siege of Kolberg (Seven Years' War)",
+                    "wikipedia": "https://wikipedia.org/wiki/Siege_of_Kolberg_(Seven_Years%27_War)"
+                },
+                {
+                    "title": "Pyotr Rumyantsev",
+                    "wikipedia": "https://wikipedia.org/wiki/Pyotr_Rumyantsev"
+                },
+                {
+                    "title": "Prussia",
+                    "wikipedia": "https://wikipedia.org/wiki/Prussia"
+                },
+                {
+                    "title": "Kołobrzeg",
+                    "wikipedia": "https://wikipedia.org/wiki/Ko%C5%82obrzeg"
+                }
+            ]
+        },
+        {
+            "year": "1773",
+            "description": "American Revolution: Boston Tea Party: Members of the Sons of Liberty disguised as Mohawk Indians dump hundreds of crates of tea into Boston harbor as a protest against the Tea Act.",
+            "wikipedia": [
+                {
+                    "title": "American Revolution",
+                    "wikipedia": "https://wikipedia.org/wiki/American_Revolution"
+                },
+                {
+                    "title": "Boston Tea Party",
+                    "wikipedia": "https://wikipedia.org/wiki/Boston_Tea_Party"
+                },
+                {
+                    "title": "Sons of Liberty",
+                    "wikipedia": "https://wikipedia.org/wiki/Sons_of_Liberty"
+                },
+                {
+                    "title": "Mohawk people",
+                    "wikipedia": "https://wikipedia.org/wiki/Mohawk_people"
+                },
+                {
+                    "title": "Boston",
+                    "wikipedia": "https://wikipedia.org/wiki/Boston"
+                },
+                {
+                    "title": "Tea Act",
+                    "wikipedia": "https://wikipedia.org/wiki/Tea_Act"
+                }
+            ]
+        },
+        {
+            "year": "1811",
+            "description": "The first two in a series of four severe earthquakes occur in the vicinity of New Madrid, Missouri.",
+            "wikipedia": [
+                {
+                    "title": "1811-12 New Madrid earthquakes",
+                    "wikipedia": "https://wikipedia.org/wiki/1811%E2%80%9312_New_Madrid_earthquakes"
+                },
+                {
+                    "title": "Earthquake",
+                    "wikipedia": "https://wikipedia.org/wiki/Earthquake"
+                },
+                {
+                    "title": "New Madrid Seismic Zone",
+                    "wikipedia": "https://wikipedia.org/wiki/New_Madrid_Seismic_Zone"
+                }
+            ]
+        },
+        {
+            "year": "1826",
+            "description": "Benjamin W. Edwards rides into Mexican-controlled Nacogdoches, Texas, and declares himself ruler of the Republic of Fredonia.",
+            "wikipedia": [
+                {
+                    "title": "Benjamin W. Edwards",
+                    "wikipedia": "https://wikipedia.org/wiki/Benjamin_W._Edwards"
+                },
+                {
+                    "title": "Nacogdoches, Texas",
+                    "wikipedia": "https://wikipedia.org/wiki/Nacogdoches,_Texas"
+                },
+                {
+                    "title": "Fredonian Rebellion",
+                    "wikipedia": "https://wikipedia.org/wiki/Fredonian_Rebellion"
+                }
+            ]
+        },
+        {
+            "year": "1838",
+            "description": "Great Trek: Battle of Blood River: Voortrekkers led by Andries Pretorius and Sarel Cilliers defeat Zulu impis, led by Dambuza (Nzobo) and Ndlela kaSompisi in what is today KwaZulu-Natal, South Africa.[1]",
+            "wikipedia": [
+                {
+                    "title": "Great Trek",
+                    "wikipedia": "https://wikipedia.org/wiki/Great_Trek"
+                },
+                {
+                    "title": "Battle of Blood River",
+                    "wikipedia": "https://wikipedia.org/wiki/Battle_of_Blood_River"
+                },
+                {
+                    "title": "Voortrekkers",
+                    "wikipedia": "https://wikipedia.org/wiki/Voortrekkers"
+                },
+                {
+                    "title": "Andries Pretorius",
+                    "wikipedia": "https://wikipedia.org/wiki/Andries_Pretorius"
+                },
+                {
+                    "title": "Sarel Cilliers",
+                    "wikipedia": "https://wikipedia.org/wiki/Sarel_Cilliers"
+                },
+                {
+                    "title": "Zulu people",
+                    "wikipedia": "https://wikipedia.org/wiki/Zulu_people"
+                },
+                {
+                    "title": "Impi",
+                    "wikipedia": "https://wikipedia.org/wiki/Impi"
+                },
+                {
+                    "title": "Ndlela kaSompisi",
+                    "wikipedia": "https://wikipedia.org/wiki/Ndlela_kaSompisi"
+                },
+                {
+                    "title": "KwaZulu-Natal",
+                    "wikipedia": "https://wikipedia.org/wiki/KwaZulu-Natal"
+                }
+            ]
+        },
+        {
+            "year": "1850",
+            "description": "The Charlotte Jane and the Randolph bring the first of the Canterbury Pilgrims to Lyttelton, New Zealand.",
+            "wikipedia": [
+                {
+                    "title": "Charlotte Jane",
+                    "wikipedia": "https://wikipedia.org/wiki/Charlotte_Jane"
+                },
+                {
+                    "title": "Randolph (ship)",
+                    "wikipedia": "https://wikipedia.org/wiki/Randolph_(ship)"
+                },
+                {
+                    "title": "Canterbury Association",
+                    "wikipedia": "https://wikipedia.org/wiki/Canterbury_Association"
+                },
+                {
+                    "title": "Lyttelton, New Zealand",
+                    "wikipedia": "https://wikipedia.org/wiki/Lyttelton,_New_Zealand"
+                }
+            ]
+        },
+        {
+            "year": "1863",
+            "description": "American Civil War: Joseph E. Johnston replaces Braxton Bragg as commander of the Confederate Army of Tennessee.",
+            "wikipedia": [
+                {
+                    "title": "American Civil War",
+                    "wikipedia": "https://wikipedia.org/wiki/American_Civil_War"
+                },
+                {
+                    "title": "Joseph E. Johnston",
+                    "wikipedia": "https://wikipedia.org/wiki/Joseph_E._Johnston"
+                },
+                {
+                    "title": "Braxton Bragg",
+                    "wikipedia": "https://wikipedia.org/wiki/Braxton_Bragg"
+                },
+                {
+                    "title": "Confederate States Army",
+                    "wikipedia": "https://wikipedia.org/wiki/Confederate_States_Army"
+                },
+                {
+                    "title": "Army of Tennessee",
+                    "wikipedia": "https://wikipedia.org/wiki/Army_of_Tennessee"
+                }
+            ]
+        },
+        {
+            "year": "1864",
+            "description": "American Civil War: Battle of Nashville: Major General George Thomas's Union forces defeat Lieutenant General John Bell Hood's Confederate Army of Tennessee.",
+            "wikipedia": [
+                {
+                    "title": "Battle of Nashville",
+                    "wikipedia": "https://wikipedia.org/wiki/Battle_of_Nashville"
+                },
+                {
+                    "title": "George Henry Thomas",
+                    "wikipedia": "https://wikipedia.org/wiki/George_Henry_Thomas"
+                },
+                {
+                    "title": "Union (American Civil War)",
+                    "wikipedia": "https://wikipedia.org/wiki/Union_(American_Civil_War)"
+                },
+                {
+                    "title": "John Bell Hood",
+                    "wikipedia": "https://wikipedia.org/wiki/John_Bell_Hood"
+                },
+                {
+                    "title": "Army of Tennessee",
+                    "wikipedia": "https://wikipedia.org/wiki/Army_of_Tennessee"
+                }
+            ]
+        },
+        {
+            "year": "1880",
+            "description": "Outbreak of the First Boer War between the Boer South African Republic and the British Empire.",
+            "wikipedia": [
+                {
+                    "title": "First Boer War",
+                    "wikipedia": "https://wikipedia.org/wiki/First_Boer_War"
+                },
+                {
+                    "title": "Boer",
+                    "wikipedia": "https://wikipedia.org/wiki/Boer"
+                },
+                {
+                    "title": "South African Republic",
+                    "wikipedia": "https://wikipedia.org/wiki/South_African_Republic"
+                },
+                {
+                    "title": "British Empire",
+                    "wikipedia": "https://wikipedia.org/wiki/British_Empire"
+                }
+            ]
+        },
+        {
+            "year": "1883",
+            "description": "Tonkin Campaign: French forces capture the Sơn Tây citadel.",
+            "wikipedia": [
+                {
+                    "title": "Tonkin Campaign",
+                    "wikipedia": "https://wikipedia.org/wiki/Tonkin_Campaign"
+                },
+                {
+                    "title": "French Third Republic",
+                    "wikipedia": "https://wikipedia.org/wiki/French_Third_Republic"
+                },
+                {
+                    "title": "Sơn Tây Campaign",
+                    "wikipedia": "https://wikipedia.org/wiki/S%C6%A1n_T%C3%A2y_Campaign"
+                },
+                {
+                    "title": "Sơn Tây (Hanoi)",
+                    "wikipedia": "https://wikipedia.org/wiki/S%C6%A1n_T%C3%A2y_(Hanoi)"
+                }
+            ]
+        },
+        {
+            "year": "1903",
+            "description": "Taj Mahal Palace & Tower hotel in Bombay first opens its doors to guests.",
+            "wikipedia": [
+                {
+                    "title": "The Taj Mahal Palace Hotel",
+                    "wikipedia": "https://wikipedia.org/wiki/The_Taj_Mahal_Palace_Hotel"
+                },
+                {
+                    "title": "Mumbai",
+                    "wikipedia": "https://wikipedia.org/wiki/Mumbai"
+                }
+            ]
+        },
+        {
+            "year": "1907",
+            "description": "The American Great White Fleet begins its circumnavigation of the world.",
+            "wikipedia": [
+                {
+                    "title": "Great White Fleet",
+                    "wikipedia": "https://wikipedia.org/wiki/Great_White_Fleet"
+                }
+            ]
+        },
+        {
+            "year": "1912",
+            "description": "First Balkan War: The Royal Hellenic Navy defeats the Ottoman Navy at the Battle of Elli.",
+            "wikipedia": [
+                {
+                    "title": "First Balkan War",
+                    "wikipedia": "https://wikipedia.org/wiki/First_Balkan_War"
+                },
+                {
+                    "title": "Hellenic Navy",
+                    "wikipedia": "https://wikipedia.org/wiki/Hellenic_Navy"
+                },
+                {
+                    "title": "Ottoman Navy",
+                    "wikipedia": "https://wikipedia.org/wiki/Ottoman_Navy"
+                },
+                {
+                    "title": "Battle of Elli",
+                    "wikipedia": "https://wikipedia.org/wiki/Battle_of_Elli"
+                }
+            ]
+        },
+        {
+            "year": "1914",
+            "description": "World War I: Admiral Franz von Hipper commands a raid on Scarborough, Hartlepool and Whitby.",
+            "wikipedia": [
+                {
+                    "title": "World War I",
+                    "wikipedia": "https://wikipedia.org/wiki/World_War_I"
+                },
+                {
+                    "title": "Franz von Hipper",
+                    "wikipedia": "https://wikipedia.org/wiki/Franz_von_Hipper"
+                },
+                {
+                    "title": "Raid on Scarborough, Hartlepool and Whitby",
+                    "wikipedia": "https://wikipedia.org/wiki/Raid_on_Scarborough,_Hartlepool_and_Whitby"
+                }
+            ]
+        },
+        {
+            "year": "1918",
+            "description": "Vincas Mickevičius-Kapsukas declares the formation of the Lithuanian Soviet Socialist Republic; it is dissolved in 1919.",
+            "wikipedia": [
+                {
+                    "title": "Vincas Mickevičius-Kapsukas",
+                    "wikipedia": "https://wikipedia.org/wiki/Vincas_Mickevi%C4%8Dius-Kapsukas"
+                },
+                {
+                    "title": "Lithuanian Soviet Socialist Republic (1918-19)",
+                    "wikipedia": "https://wikipedia.org/wiki/Lithuanian_Soviet_Socialist_Republic_(1918-19)"
+                }
+            ]
+        },
+        {
+            "year": "1920",
+            "description": "The Haiyuan earthquake, magnitude 8.5, rocks the Gansu province in China, killing an estimated 200,000.",
+            "wikipedia": [
+                {
+                    "title": "1920 Haiyuan earthquake",
+                    "wikipedia": "https://wikipedia.org/wiki/1920_Haiyuan_earthquake"
+                },
+                {
+                    "title": "Gansu",
+                    "wikipedia": "https://wikipedia.org/wiki/Gansu"
+                }
+            ]
+        },
+        {
+            "year": "1922",
+            "description": "President of Poland Gabriel Narutowicz is assassinated by Eligiusz Niewiadomski at the Zachęta Gallery in Warsaw.",
+            "wikipedia": [
+                {
+                    "title": "President of Poland",
+                    "wikipedia": "https://wikipedia.org/wiki/President_of_Poland"
+                },
+                {
+                    "title": "Gabriel Narutowicz",
+                    "wikipedia": "https://wikipedia.org/wiki/Gabriel_Narutowicz"
+                },
+                {
+                    "title": "Eligiusz Niewiadomski",
+                    "wikipedia": "https://wikipedia.org/wiki/Eligiusz_Niewiadomski"
+                },
+                {
+                    "title": "Warsaw",
+                    "wikipedia": "https://wikipedia.org/wiki/Warsaw"
+                }
+            ]
+        },
+        {
+            "year": "1930",
+            "description": "Bank robber Herman Lamm and members of his crew are killed by a 200-strong posse, following a botched bank robbery, in Clinton, Indiana.",
+            "wikipedia": [
+                {
+                    "title": "Herman Lamm",
+                    "wikipedia": "https://wikipedia.org/wiki/Herman_Lamm"
+                },
+                {
+                    "title": "Clinton, Indiana",
+                    "wikipedia": "https://wikipedia.org/wiki/Clinton,_Indiana"
+                }
+            ]
+        },
+        {
+            "year": "1937",
+            "description": "Theodore Cole and Ralph Roe attempt to escape from the American federal prison on Alcatraz Island in San Francisco Bay; neither is ever seen again.",
+            "wikipedia": [
+                {
+                    "title": "Theodore Cole and Ralph Roe",
+                    "wikipedia": "https://wikipedia.org/wiki/Theodore_Cole_and_Ralph_Roe"
+                },
+                {
+                    "title": "Alcatraz Island",
+                    "wikipedia": "https://wikipedia.org/wiki/Alcatraz_Island"
+                },
+                {
+                    "title": "San Francisco Bay",
+                    "wikipedia": "https://wikipedia.org/wiki/San_Francisco_Bay"
+                }
+            ]
+        },
+        {
+            "year": "1938",
+            "description": "Adolf Hitler institutes the Cross of Honour of the German Mother.",
+            "wikipedia": [
+                {
+                    "title": "Adolf Hitler",
+                    "wikipedia": "https://wikipedia.org/wiki/Adolf_Hitler"
+                },
+                {
+                    "title": "Cross of Honour of the German Mother",
+                    "wikipedia": "https://wikipedia.org/wiki/Cross_of_Honour_of_the_German_Mother"
+                }
+            ]
+        },
+        {
+            "year": "1941",
+            "description": "World War II: Japanese forces occupy Miri, Sarawak.",
+            "wikipedia": [
+                {
+                    "title": "World War II",
+                    "wikipedia": "https://wikipedia.org/wiki/World_War_II"
+                },
+                {
+                    "title": "Miri, Malaysia",
+                    "wikipedia": "https://wikipedia.org/wiki/Miri,_Malaysia"
+                },
+                {
+                    "title": "Sarawak",
+                    "wikipedia": "https://wikipedia.org/wiki/Sarawak"
+                }
+            ]
+        },
+        {
+            "year": "1942",
+            "description": "The Holocaust: Schutzstaffel chief Heinrich Himmler orders that Roma candidates for extermination be deported to Auschwitz.",
+            "wikipedia": [
+                {
+                    "title": "The Holocaust",
+                    "wikipedia": "https://wikipedia.org/wiki/The_Holocaust"
+                },
+                {
+                    "title": "Schutzstaffel",
+                    "wikipedia": "https://wikipedia.org/wiki/Schutzstaffel"
+                },
+                {
+                    "title": "Heinrich Himmler",
+                    "wikipedia": "https://wikipedia.org/wiki/Heinrich_Himmler"
+                },
+                {
+                    "title": "Romani people",
+                    "wikipedia": "https://wikipedia.org/wiki/Romani_people"
+                },
+                {
+                    "title": "Auschwitz concentration camp",
+                    "wikipedia": "https://wikipedia.org/wiki/Auschwitz_concentration_camp"
+                }
+            ]
+        },
+        {
+            "year": "1944",
+            "description": "World War II: The Battle of the Bulge begins with the surprise offensive of three German armies through the Ardennes forest.",
+            "wikipedia": [
+                {
+                    "title": "Battle of the Bulge",
+                    "wikipedia": "https://wikipedia.org/wiki/Battle_of_the_Bulge"
+                },
+                {
+                    "title": "German Army (Wehrmacht)",
+                    "wikipedia": "https://wikipedia.org/wiki/German_Army_(Wehrmacht)"
+                },
+                {
+                    "title": "Ardennes",
+                    "wikipedia": "https://wikipedia.org/wiki/Ardennes"
+                }
+            ]
+        },
+        {
+            "year": "1947",
+            "description": "William Shockley, John Bardeen and Walter Brattain build the first practical point-contact transistor.",
+            "wikipedia": [
+                {
+                    "title": "William Shockley",
+                    "wikipedia": "https://wikipedia.org/wiki/William_Shockley"
+                },
+                {
+                    "title": "John Bardeen",
+                    "wikipedia": "https://wikipedia.org/wiki/John_Bardeen"
+                },
+                {
+                    "title": "Walter Houser Brattain",
+                    "wikipedia": "https://wikipedia.org/wiki/Walter_Houser_Brattain"
+                },
+                {
+                    "title": "Point-contact transistor",
+                    "wikipedia": "https://wikipedia.org/wiki/Point-contact_transistor"
+                }
+            ]
+        },
+        {
+            "year": "1950",
+            "description": "Korean War: U.S. President Harry S. Truman declares a state of emergency, after Chinese troops enter the fight in support of communist North Korea.",
+            "wikipedia": [
+                {
+                    "title": "Korean War",
+                    "wikipedia": "https://wikipedia.org/wiki/Korean_War"
+                },
+                {
+                    "title": "President of the United States",
+                    "wikipedia": "https://wikipedia.org/wiki/President_of_the_United_States"
+                },
+                {
+                    "title": "Harry S. Truman",
+                    "wikipedia": "https://wikipedia.org/wiki/Harry_S._Truman"
+                },
+                {
+                    "title": "Communism",
+                    "wikipedia": "https://wikipedia.org/wiki/Communism"
+                },
+                {
+                    "title": "North Korea",
+                    "wikipedia": "https://wikipedia.org/wiki/North_Korea"
+                }
+            ]
+        },
+        {
+            "year": "1960",
+            "description": "A United Airlines Douglas DC-8 and a TWA Lockheed Super Constellation collide over Staten Island, New York and crash, killing all 128 people aboard both aircraft and six more on the ground.",
+            "wikipedia": [
+                {
+                    "title": "United Airlines",
+                    "wikipedia": "https://wikipedia.org/wiki/United_Airlines"
+                },
+                {
+                    "title": "Trans World Airlines",
+                    "wikipedia": "https://wikipedia.org/wiki/Trans_World_Airlines"
+                },
+                {
+                    "title": "1960 New York mid-air collision",
+                    "wikipedia": "https://wikipedia.org/wiki/1960_New_York_mid-air_collision"
+                },
+                {
+                    "title": "Staten Island",
+                    "wikipedia": "https://wikipedia.org/wiki/Staten_Island"
+                },
+                {
+                    "title": "New York City",
+                    "wikipedia": "https://wikipedia.org/wiki/New_York_City"
+                }
+            ]
+        },
+        {
+            "year": "1965",
+            "description": "Vietnam War: General William Westmoreland sends U.S. Secretary of Defense Robert McNamara a request for 243,000 more men by the end of 1966.",
+            "wikipedia": [
+                {
+                    "title": "Vietnam War",
+                    "wikipedia": "https://wikipedia.org/wiki/Vietnam_War"
+                },
+                {
+                    "title": "William Westmoreland",
+                    "wikipedia": "https://wikipedia.org/wiki/William_Westmoreland"
+                },
+                {
+                    "title": "United States Secretary of Defense",
+                    "wikipedia": "https://wikipedia.org/wiki/United_States_Secretary_of_Defense"
+                },
+                {
+                    "title": "Robert McNamara",
+                    "wikipedia": "https://wikipedia.org/wiki/Robert_McNamara"
+                },
+                {
+                    "title": "1966",
+                    "wikipedia": "https://wikipedia.org/wiki/1966"
+                }
+            ]
+        },
+        {
+            "year": "1968",
+            "description": "Second Vatican Council: Official revocation of the Edict of Expulsion of Jews from Spain.",
+            "wikipedia": [
+                {
+                    "title": "Second Vatican Council",
+                    "wikipedia": "https://wikipedia.org/wiki/Second_Vatican_Council"
+                },
+                {
+                    "title": "Alhambra Decree",
+                    "wikipedia": "https://wikipedia.org/wiki/Alhambra_Decree"
+                }
+            ]
+        },
+        {
+            "year": "1971",
+            "description": "Bangladesh Liberation War and Indo-Pakistani War of 1971: The surrender of the Pakistan Army brings an end to both conflicts. This is commemorated annually as Victory Day in Bangladesh, and as Vijay Diwas in India.",
+            "wikipedia": [
+                {
+                    "title": "Bangladesh Liberation War",
+                    "wikipedia": "https://wikipedia.org/wiki/Bangladesh_Liberation_War"
+                },
+                {
+                    "title": "Indo-Pakistani War of 1971",
+                    "wikipedia": "https://wikipedia.org/wiki/Indo-Pakistani_War_of_1971"
+                },
+                {
+                    "title": "Pakistan Army",
+                    "wikipedia": "https://wikipedia.org/wiki/Pakistan_Army"
+                },
+                {
+                    "title": "Victory Day (Bangladesh)",
+                    "wikipedia": "https://wikipedia.org/wiki/Victory_Day_(Bangladesh)"
+                },
+                {
+                    "title": "Vijay Diwas (India)",
+                    "wikipedia": "https://wikipedia.org/wiki/Vijay_Diwas_(India)"
+                }
+            ]
+        },
+        {
+            "year": "1971",
+            "description": "The United Kingdom recognizes Bahrain's independence, which is commemorated annually as Bahrain's National Day.",
+            "wikipedia": [
+                {
+                    "title": "Bahrain",
+                    "wikipedia": "https://wikipedia.org/wiki/Bahrain"
+                },
+                {
+                    "title": "Independence Day (Bahrain)",
+                    "wikipedia": "https://wikipedia.org/wiki/Independence_Day_(Bahrain)"
+                }
+            ]
+        },
+        {
+            "year": "1978",
+            "description": "Cleveland, Ohio becomes the first major American city to default on its financial obligations since the Great Depression.",
+            "wikipedia": [
+                {
+                    "title": "Cleveland, Ohio",
+                    "wikipedia": "https://wikipedia.org/wiki/Cleveland,_Ohio"
+                },
+                {
+                    "title": "Cleveland Public Power",
+                    "wikipedia": "https://wikipedia.org/wiki/Cleveland_Public_Power"
+                },
+                {
+                    "title": "Great Depression",
+                    "wikipedia": "https://wikipedia.org/wiki/Great_Depression"
+                }
+            ]
+        },
+        {
+            "year": "1979",
+            "description": "Libya joins four other OPEC nations in raising crude oil prices, which has an immediate, dramatic effect on the United States.",
+            "wikipedia": [
+                {
+                    "title": "Libya",
+                    "wikipedia": "https://wikipedia.org/wiki/Libya"
+                },
+                {
+                    "title": "OPEC",
+                    "wikipedia": "https://wikipedia.org/wiki/OPEC"
+                }
+            ]
+        },
+        {
+            "year": "1985",
+            "description": "Paul Castellano and Thomas Bilotti are shot dead on the orders of John Gotti, who assumes leadership of New York's Gambino crime family.",
+            "wikipedia": [
+                {
+                    "title": "Paul Castellano",
+                    "wikipedia": "https://wikipedia.org/wiki/Paul_Castellano"
+                },
+                {
+                    "title": "Thomas Bilotti",
+                    "wikipedia": "https://wikipedia.org/wiki/Thomas_Bilotti"
+                },
+                {
+                    "title": "John Gotti",
+                    "wikipedia": "https://wikipedia.org/wiki/John_Gotti"
+                },
+                {
+                    "title": "Gambino crime family",
+                    "wikipedia": "https://wikipedia.org/wiki/Gambino_crime_family"
+                }
+            ]
+        },
+        {
+            "year": "1989",
+            "description": "Romanian Revolution: Protests break out in Timișoara, Romania, in response to an attempt by the government to evict dissident Hungarian pastor László Tőkés.",
+            "wikipedia": [
+                {
+                    "title": "Romanian Revolution",
+                    "wikipedia": "https://wikipedia.org/wiki/Romanian_Revolution"
+                },
+                {
+                    "title": "Timișoara",
+                    "wikipedia": "https://wikipedia.org/wiki/Timi%C8%99oara"
+                },
+                {
+                    "title": "Romania",
+                    "wikipedia": "https://wikipedia.org/wiki/Romania"
+                },
+                {
+                    "title": "László Tőkés",
+                    "wikipedia": "https://wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s"
+                }
+            ]
+        },
+        {
+            "year": "1989",
+            "description": "U.S. Appeals Court Judge Robert Smith Vance is assassinated by a mail bomb sent by Walter Leroy Moody, Jr.",
+            "wikipedia": [
+                {
+                    "title": "United States Court of Appeals for the Eleventh Circuit",
+                    "wikipedia": "https://wikipedia.org/wiki/United_States_Court_of_Appeals_for_the_Eleventh_Circuit"
+                },
+                {
+                    "title": "Robert Smith Vance",
+                    "wikipedia": "https://wikipedia.org/wiki/Robert_Smith_Vance"
+                }
+            ]
+        },
+        {
+            "year": "1991",
+            "description": "Kazakhstan declares independence from the Soviet Union.",
+            "wikipedia": [
+                {
+                    "title": "Kazakhstan",
+                    "wikipedia": "https://wikipedia.org/wiki/Kazakhstan"
+                },
+                {
+                    "title": "Soviet Union",
+                    "wikipedia": "https://wikipedia.org/wiki/Soviet_Union"
+                }
+            ]
+        },
+        {
+            "year": "2013",
+            "description": "A bus falls from an elevated highway in the Philippines capital Manila killing at least 18 people with 20 injured.",
+            "wikipedia": [
+                {
+                    "title": "2013 Manila Skyway bus accident",
+                    "wikipedia": "https://wikipedia.org/wiki/2013_Manila_Skyway_bus_accident"
+                },
+                {
+                    "title": "Manila",
+                    "wikipedia": "https://wikipedia.org/wiki/Manila"
+                }
+            ]
+        },
+        {
+            "year": "2014",
+            "description": "Tehrik-i-Taliban Pakistan militants attacked an Army Public School in Peshawar, Pakistan, killing 145 people, mostly schoolchildren.",
+            "wikipedia": [
+                {
+                    "title": "Tehrik-i-Taliban Pakistan",
+                    "wikipedia": "https://wikipedia.org/wiki/Tehrik-i-Taliban_Pakistan"
+                },
+                {
+                    "title": "2014 Peshawar school massacre",
+                    "wikipedia": "https://wikipedia.org/wiki/2014_Peshawar_school_massacre"
+                },
+                {
+                    "title": "Peshawar",
+                    "wikipedia": "https://wikipedia.org/wiki/Peshawar"
+                },
+                {
+                    "title": "Pakistan",
+                    "wikipedia": "https://wikipedia.org/wiki/Pakistan"
+                }
+            ]
+        }
+    ]
+}`;
+        let day =JSON.parse(onthisday);
+        console.log(day);
+ /*        var ev = day.events;
+        console.log(ev); */
+        let html = `<h1>${day.date}</h1><hr>`;
+        day.events.forEach(ev => {
+/*             if(ev.year === "1971"){
+            html += `<div><h3>${ev.year}</h3><p>${ev.description}</p></div>`;
+            } */
+            html += `<div><h3>${ev.year}</h3><p>${ev.description}</p></div>`;
+        });
+        document.getElementById("eventsContainer").innerHTML = html;
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var marks = prompt("Enter Marks");
+        var result;
+        //if marks is greater than or equal to 10 you passed else you failed
+/*         if (marks >= 10) {
+            result = "passed";
+        } else {
+            result = "failed";
+        } */
+        //ternary operator: (condition)?action_if_true:action_if_false
+        result = (marks >= 10) ? "Passed" : "Failed";
+        alert("You " + result);
+    </script>
+</body>
+</html>

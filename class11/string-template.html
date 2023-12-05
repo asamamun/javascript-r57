@@ -1,0 +1,200 @@
+<script src="template.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<script>
+document.write(generatehead("my title"));
+</script>
+<body>    
+    <a href="https://www.w3schools.com/js/js_string_templates.asp">https://www.w3schools.com/js/js_string_templates.asp</a>
+    <div class="w3-col l10 m12" id="main">
+        <div id="mainLeaderboard" style="overflow:hidden;">
+          <!-- MainLeaderboard-->
+  
+          <!--<pre>main_leaderboard, all: [728,90][970,90][320,50][468,60]</pre>-->
+          <div id="adngin-main_leaderboard-0"></div>
+          <!-- adspace leaderboard -->
+  
+        </div>
+  
+  <h1>JavaScript Template Literals</h1>
+
+  <div class="w3-info">
+  <p>Synonyms:</p>
+  <ul>
+  <li>Template Literals</li>
+  <li>Template Strings</li>
+  <li>String Templates</li>
+  <li>Back-Tics Syntax</li>
+  </ul>
+  </div>
+  
+  <h2>Back-Tics Syntax</h2>
+  <p><b>Template Literals</b> use back-ticks (``) rather than the quotes ("") to define a string:</p>
+  <div class="w3-example">
+  <h3>Example</h3>
+  <div class="w3-code notranslate jsHigh"><span class="jscolor" style="color:black">
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> text = <span class="jsstringtempcolor" style="color:#f50">`Hello World!`</span>;<span class="jsnumbercolor" style="color:red">
+  </span> </span></div>
+  <p><a class="w3-btn" href="tryit.asp?filename=tryjs_templates" target="_blank">Try it Yourself »</a></p>
+  </div>
+  
+  <hr>
+  <h2>Quotes Inside Strings</h2>
+  <p>With <b>template literals</b>, you can use both single and double quotes inside a string:</p>
+  <div class="w3-example">
+  <h3>Example</h3>
+  <div class="w3-code notranslate jsHigh"><span class="jscolor" style="color:black">
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> text = <span class="jsstringtempcolor" style="color:#f50">`He's often called "Johnny"`</span>;<span class="jsnumbercolor" style="color:red">
+  </span> </span></div>
+  <p><a class="w3-btn" href="tryit.asp?filename=tryjs_templates_quotes" target="_blank">Try it Yourself »</a></p>
+  </div>
+  
+  <hr>
+  <h2>Multiline Strings</h2>
+  <p><b>Template literals</b> allows multiline strings:</p>
+  <div class="w3-example">
+  <h3>Example</h3>
+  <div class="w3-code notranslate jsHigh"><span class="jscolor" style="color:black">
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> text =<br>
+  <span class="jsstringtempcolor" style="color:#f50">`The quick<br>
+  brown fox<br>
+  jumps over<br>
+  the lazy dog`</span>;<br><span class="jsnumbercolor" style="color:red">
+  </span> </span></div>
+  <p><a class="w3-btn" href="tryit.asp?filename=tryjs_templates_multiline" target="_blank">Try it Yourself »</a></p>
+  </div>
+  
+  <hr>
+  <h2>Interpolation</h2>
+  <p><b>Template literals</b> provide an easy way to interpolate variables and expressions into strings.</p>
+  <p>The method is called string interpolation.</p>
+  <p>The syntax is:</p>
+  <div class="w3-example">
+  <div class="w3-code notranslate jsHigh"><span class="jscolor" style="color:black">
+  ${.<span class="jspropertycolor" style="color:black"></span>.<span class="jspropertycolor" style="color:black"></span>.<span class="jspropertycolor" style="color:black"></span>} </span></div>
+  </div>
+  
+  <hr>
+  <div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+  <!-- MidContent -->
+  <!-- <p class="adtext">Advertisement</p> -->
+  
+    <div id="adngin-mid_content-0"></div>
+    
+  </div>
+  <hr>
+  <h2>Variable Substitutions</h2>
+  <p><b>Template literals</b> allow variables in strings:</p>
+  <div class="w3-example">
+  <h3>Example</h3>
+  <div class="w3-code notranslate jsHigh"><span class="jscolor" style="color:black">
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> firstName = <span class="jsstringcolor" style="color:brown">"John"</span>;<br>
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> lastName = <span class="jsstringcolor" style="color:brown">"Doe"</span>;<br><span class="jsnumbercolor" style="color:red">
+  </span><br>
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> text = <span class="jsstringtempcolor" style="color:#f50">`Welcome ${firstName}, ${lastName}!`</span>;<span class="jsnumbercolor" style="color:red">
+  </span> </span></div>
+  <p><a class="w3-btn" href="tryit.asp?filename=tryjs_templates_variables" target="_blank">Try it Yourself »</a></p>
+  </div>
+  <div class="w3-note">
+  <p>Automatic replacing of variables with real values is called <b>string interpolation</b>.</p>
+  </div>
+  
+  <hr>
+  <h2>Expression Substitution</h2>
+  <p><b>Template literals</b> allow expressions in strings:</p>
+  <div class="w3-example">
+  <h3>Example</h3>
+  <div class="w3-code notranslate jsHigh"><span class="jscolor" style="color:black">
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> price = <span class="jsnumbercolor" style="color:red">10</span>;<br>
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> VAT = <span class="jsnumbercolor" style="color:red">0.25</span>;<br><span class="jsnumbercolor" style="color:red">
+  </span><br>
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> total = <span class="jsstringtempcolor" style="color:#f50">`Total: ${(price * (1 + VAT)).toFixed(2)}`</span>;<span class="jsnumbercolor" style="color:red">
+  </span> </span></div>
+  <p><a class="w3-btn" href="tryit.asp?filename=tryjs_templates_expressions" target="_blank">Try it Yourself »</a></p>
+  </div>
+  <div class="w3-note">
+  <p>Automatic replacing of expressions with real values is called <b>string interpolation</b>.</p>
+  </div>
+  
+  
+  <hr>
+  <h2>HTML Templates</h2>
+  <div class="w3-example">
+  <h3>Example</h3>
+  <div class="w3-code notranslate jsHigh"><span class="jscolor" style="color:black">
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> header = <span class="jsstringcolor" style="color:brown">"Templates Literals"</span>;<br>
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> tags = [<span class="jsstringcolor" style="color:brown">"template literals"</span>, <span class="jsstringcolor" style="color:brown">"javascript"</span>, <span class="jsstringcolor" style="color:brown">"es6"</span>];<br><span class="jsnumbercolor" style="color:red">
+  </span><br>
+  <span class="jskeywordcolor" style="color:mediumblue">let</span> html = <span class="jsstringtempcolor" style="color:#f50">`&lt;h2&gt;${header}&lt;/h2&gt;&lt;ul&gt;`</span>;<span class="jsnumbercolor" style="color:red">
+  </span><br>
+  <span class="jskeywordcolor" style="color:mediumblue">for</span> (<span class="jskeywordcolor" style="color:mediumblue">const</span> x of tags) {<br><span class="jsnumbercolor" style="color:red">
+  </span>&nbsp; html += <span class="jsstringtempcolor" style="color:#f50">`&lt;li&gt;${x}&lt;/li&gt;`</span>;<br><span class="jsnumbercolor" style="color:red">
+  </span>}<br><span class="jsnumbercolor" style="color:red">
+  </span><br>
+  html += <span class="jsstringtempcolor" style="color:#f50">`&lt;/ul&gt;`</span>;<span class="jsnumbercolor" style="color:red">
+  </span> </span></div>
+  <p><a class="w3-btn" href="tryit.asp?filename=tryjs_templates_html" target="_blank">Try it Yourself »</a></p>
+  </div>
+  
+  <hr>
+  <h2>Browser Support</h2>
+  <p><code class="w3-codespan">Template Literals</code> is an <a href="js_es6.asp">ES6  feature</a> (JavaScript 2015).</p>
+  <p>It is supported in all modern browsers:</p>
+  <div class="w3-responsive">
+  <table class="browserref notranslate">
+    <tbody><tr style="height:60px">
+      <th style="width:20%;" class="bsChrome" title="Chrome"></th>
+      <th style="width:20%;" class="bsEdge" title="Edge"></th>
+      <th style="width:20%;" class="bsFirefox" title="Firefox"></th>
+      <th style="width:20%;" class="bsSafari" title="Safari"></th>
+      <th style="width:19.9%;" class="bsOpera" title="Opera"></th>                
+    </tr>
+    <tr>
+      <td>Chrome</td>
+      <td>Edge</td>
+      <td>Firefox</td>
+      <td>Safari</td>
+      <td>Opera</td>
+    </tr>
+    <tr>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+  </tbody></table>
+  </div>
+  <p><code class="w3-codespan">Template Literals</code> is not supported in Internet Explorer.</p>
+  
+  <div class="w3-note">
+  <h2>Complete String Reference</h2>
+  <p>For a complete String reference, go to our:</p>
+  <p><a href="/jsref/jsref_obj_string.asp">Complete JavaScript String Reference</a>.</p>
+  <p>The reference contains descriptions and examples of all string properties and methods.</p>
+  </div>
+  <div class="w3-clear nextprev w3-center">
+  <a class="w3-left w3-btn" href="js_string_search.asp">❮ Previous</a><a class="w3-btn w3-hide-small myl-nav-butt" href="https://www.w3schools.com/signup/?utm_source=classic&amp;utm_medium=js_tutorial&amp;utm_campaign=button_lower_navigation" title="Sign Up and improve Your Learning Experience" target="_blank">Log in to track progress</a>
+  <a class="w3-right w3-btn" href="js_numbers.asp">Next ❯</a>
+  </div>
+  <div id="user-profile-bottom-wrapper" class="user-authenticated user-profile-bottom-wrapper w3-hide">
+    <a href="https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fmy-learning.w3schools.com" class="user-profile-btn ga-bottom ga-bottom-profile" title="Your W3Schools Profile" aria-label="Your W3Schools Profile" target="_top">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2048 2048" class="user-profile-icon" aria-label="Your W3Schools Profile Icon">
+        <path d="M 843.500 1148.155 C 837.450 1148.515, 823.050 1149.334, 811.500 1149.975 C 742.799 1153.788, 704.251 1162.996, 635.391 1192.044 C 517.544 1241.756, 398.992 1352.262, 337.200 1470 C 251.831 1632.658, 253.457 1816.879, 340.500 1843.982 C 351.574 1847.431, 1696.426 1847.431, 1707.500 1843.982 C 1794.543 1816.879, 1796.169 1632.658, 1710.800 1470 C 1649.008 1352.262, 1530.456 1241.756, 1412.609 1192.044 C 1344.588 1163.350, 1305.224 1153.854, 1238.500 1150.039 C 1190.330 1147.286, 1196.307 1147.328, 1097 1149.035 C 1039.984 1150.015, 1010.205 1150.008, 950 1149.003 C 851.731 1147.362, 856.213 1147.398, 843.500 1148.155" stroke="none" fill="#2a93fb" fill-rule="evenodd"></path>
+        <path d="M 1008 194.584 C 1006.075 194.809, 999.325 195.476, 993 196.064 C 927.768 202.134, 845.423 233.043, 786 273.762 C 691.987 338.184, 622.881 442.165, 601.082 552 C 588.496 615.414, 592.917 705.245, 611.329 760.230 C 643.220 855.469, 694.977 930.136, 763.195 979.321 C 810.333 1013.308, 839.747 1026.645, 913.697 1047.562 C 1010.275 1074.879, 1108.934 1065.290, 1221 1017.694 C 1259.787 1001.221, 1307.818 965.858, 1339.852 930.191 C 1460.375 795.998, 1488.781 609.032, 1412.581 451.500 C 1350.098 322.327, 1240.457 235.724, 1097.500 202.624 C 1072.356 196.802, 1025.206 192.566, 1008 194.584" stroke="none" fill="#0aaa8a" fill-rule="evenodd"></path>
+      </svg>
+  
+      <svg xmlns="http://www.w3.org/2000/svg" class="user-progress" aria-label="Your W3Schools Profile Progress">
+        <path class="user-progress-circle1" fill="none" d="M 25.99650934151373 15.00000030461742 A 20 20 0 1 0 26 15"></path>
+        <path class="user-progress-circle2" fill="none" d="M 26 15 A 20 20 0 0 0 26 15"></path>
+      </svg>
+  
+      <span class="user-progress-star">★</span>
+  
+      <span class="user-progress-point">+1</span>
+    </a>
+  </div>
+  
+  </div>
+</body>
+</html>

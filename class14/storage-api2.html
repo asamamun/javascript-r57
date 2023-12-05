@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="productname"></h1>
+    <h3 id="productprice"></h3>
+    <script>
+        document.getElementById("productname").innerHTML = localStorage.getItem("products");
+        document.getElementById("productprice").innerHTML = localStorage.getItem("product-price")
+    </script>
+</body>
+</html>

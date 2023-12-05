@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //open methods parameters are 
+        // let w = window.open("form-dom.html","","width=400px; height=350px");
+        let win = window.open("","","width=400px; height=350px;titlebar=0;toolbar=0");
+        let s = win.document;
+        s.write("text in new window<br>");
+        s.write("another line<br>");
+        s.write("new lines<br>");
+
+        var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+    </script>
+</body>
+</html>

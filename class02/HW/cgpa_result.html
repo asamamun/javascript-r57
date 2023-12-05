@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="">
+            <div><label for="">subject 01</label>
+            <select name="" id="inval1">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result01"></label></div>
+            <div><label for="">subject 02</label>
+            <select name="" id="inval2">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result02"></label></div>
+            <div><label for="">subject 03</label>
+            <select name="" id="inval3">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result03"></label></div>
+            <div><label for="">subject 04</label>
+            <select name="" id="inval4">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result04"></label></div>
+            <div><label for="">subject 05</label>
+            <select name="" id="inval5">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result05"></label></div>
+            <div><label for="">subject 06</label>
+            <select name="" id="inval6">
+                <option value="AAA">A+</option>
+                <option value="AA">A</option>
+                <option value="A">A-</option>
+                <option value="BB">B</option>
+                <option value="B">B-</option>
+            </select>
+            <label for="" id="result06"></label></div>
+
+            <div>
+                <input type="button" value="Result" onclick="calc()">
+                <label for="">Total CGPA:</label>
+                <label for="" id="totalcgpa"></label>
+            </div>
+        </form>
+    </div>
+<script>
+ function calc() {
+    var a=document.getElementById("inval1").value;
+    var b=document.getElementById("inval2").value;
+    var c=document.getElementById("inval3").value;
+    var d=document.getElementById("inval4").value;
+    var e=document.getElementById("inval5").value;
+    var f=document.getElementById("inval6").value;
+    var r1= document.getElementById("result01").value;
+    var r2= document.getElementById("result02").value;
+    var r3= document.getElementById("result03").value;
+    var r4= document.getElementById("result04").value;
+    var r5= document.getElementById("result05").value;
+    var r6= document.getElementById("result06").value;
+    var tr = document.getElementById("totalcgpa").value;
+
+    var total= r1+r2+r3+r4+r5+r6;
+    var tr = total;
+    
+    if (a,b,c,d,e,f=="AAA")
+                        {document.getElementById("result01").innerHTML=5;
+                        document.getElementById("result02").innerHTML=5;
+                        document.getElementById("result03").innerHTML=5;
+                        document.getElementById("result04").innerHTML=5;
+                        document.getElementById("result05").innerHTML=5;
+                        document.getElementById("result06").innerHTML=5;}
+    else {if(a,b,c,d,e,f="AA")
+                        {document.getElementById("result01").innerHTML=4.5;
+                        document.getElementById("result02").innerHTML=4.5;
+                        document.getElementById("result03").innerHTML=4.5;
+                        document.getElementById("result04").innerHTML=4.5;
+                        document.getElementById("result05").innerHTML=4.5;
+                        document.getElementById("result06").innerHTML=4.5;}
+    else {if (a,b,c,d,e,f="A")
+                        {document.getElementById("result01").innerHTML=4;
+                        document.getElementById("result02").innerHTML=4;
+                        document.getElementById("result03").innerHTML=4;
+                        document.getElementById("result04").innerHTML=4;
+                        document.getElementById("result05").innerHTML=4;
+                        document.getElementById("result06").innerHTML=4;}
+    else {if (a,b,c,d,e,f="BB")
+                        {document.getElementById("result01").innerHTML=3.5;
+                        document.getElementById("result02").innerHTML=3.5;
+                        document.getElementById("result03").innerHTML=3.5;
+                        document.getElementById("result04").innerHTML=3.5;
+                        document.getElementById("result05").innerHTML=3.5;
+                        document.getElementById("result06").innerHTML=3.5;}
+    else
+                        {document.getElementById("result01").innerHTML=3;
+                        document.getElementById("result02").innerHTML=3;
+                        document.getElementById("result03").innerHTML=3;
+                        document.getElementById("result04").innerHTML=3;
+                        document.getElementById("result05").innerHTML=3;
+                        document.getElementById("result06").innerHTML=3;}
+ }}}}
+</script>
+
+
+
+</body>
+</html>

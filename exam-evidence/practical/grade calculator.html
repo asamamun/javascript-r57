@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h1>Grade calculator</h1>
+<h3 id="res"></h3>
+<script>
+var num = prompt("Your number?")
+var grade;
+if(num>=90){grade = "A+"}
+else if(num>=80){grade = "A"}
+else if(num>=70){grade = "A-"}
+else if(num>=60){grade = "B"}
+else if(num>=33){grade = "C"}
+else {grade = "F";}
+document.getElementById("res").innerHTML = grade;
+document.write(grade)
+</script>
+</body>
+</html>

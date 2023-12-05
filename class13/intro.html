@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ECMAScript 2015, also known as ES6, introduced JavaScript Classes.
+        JavaScript Classes are templates for JavaScript Objects.</h1>
+    <h3>Class: class is a template which has properties and methods. To use a class you have to create an object of that
+        class</h3>
+    <hr>
+    <script>
+        class Car {
+            //class has properties
+            name;
+            model;
+            year;
+            cc;
+            //constructor: a method which is called automatically when an object is created, অবজেক্ট তৈরি করবার সময় যেই ফাংশন অটোমাটিক কল হয় সেই হচ্ছে constructor
+            constructor(n, m,y) {
+                this.name = n;
+                this.model = m;
+                
+            }
+            //class has methods(functions)
+            start() { console.log("starting" + this.name) }
+            stop() { }
+            break() { }
+            honk() { }
+            info() {
+                return "this is " + this.name + ", model name is " + this.model;
+            }
+            age() {
+                const date = new Date();
+                return date.getFullYear() - this.year;
+            }
+        }
+        let nano = new Car("Tata Nano", "elite");//i am creating object nano from class Car. As object is created a method named constructor will be called automatically. 
+        //A constructor can take parameters.
+        // nano.name = "Tata Nano";
+        alert(nano.info());
+        nano.start();
+        nano.honk();
+        /*         let d = new Date();
+                d.getDate()
+                d.getFullYear() */
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="b.html">b.html</a>
+    <script>
+        var a = prompt("What was the magnitude of the earthquake?");
+        //document.cookie = "username=John Doe";
+        var days = 1;
+        const d = new Date();
+//   d.setTime(d.getTime() + (days*24*60*60*1000));
+  d.setTime(d.getTime() + 2*10*1000);
+  let expires = "expires="+ d.toUTCString();
+        document.cookie = "m="+a + ";"+ expires;
+    </script>
+</body>
+</html>

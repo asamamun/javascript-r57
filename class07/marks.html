@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <script>
+        var marks = prompt("Marks in parcent","dont put parcent sign");
+        var result;
+        if(marks >= 80){ result = "A+" }
+        else if(marks >=70){ result = "A" }
+        else if(marks >=60){ result = "B" }
+        else{ result = "Out of range" }
+        // document.write(marks +" = " +result)
+        document.getElementById("result").innerHTML = marks +" = " +result;
+    </script>
+</body>
+</html>

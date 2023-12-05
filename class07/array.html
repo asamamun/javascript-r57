@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #colorDiv{ 
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Important Note: css properties are used in javascript in camel case. So, background-color will be backgroundColor in javascript. font-size will be fontSize in javascript.</h1>
+    <img src="logoipsum-332.svg" alt="" width="20"> <br>
+    <img src="https://placehold.co/900x300" alt="">
+    <div id="colorDiv">test</div>
+    <button onclick="changeColor()">Change Color</button>
+    <br><br><br><br><br><br>
+    <script>
+        // console.log(Math.random()*1000);
+        let colorsArray = ["black","red","green","yellow","blue","yellow","pink","orange","purple","chris gayle","fuchsia","teal"];
+        let s = 1;
+        function changeColor(){            
+            let r = Math.random()*100;
+            let onlyint = parseInt(r);
+            let  rand = colorsArray[parseInt(onlyint % colorsArray.length)];
+            document.getElementById("colorDiv").style.backgroundColor = rand;
+            document.getElementById("colorDiv").style.fontSize = s++ + "px";//1px
+            document.getElementById("colorDiv").style.boxShadow = s +"px "+ s+"px "+ s+"px " +rand;
+            document.getElementById("colorDiv").innerHTML = " I am " + s + "px now";
+        }
+
+        console.log(colorsArray.length);
+        console.log(colorsArray[2]);
+        console.log(colorsArray[colorsArray.length - 1]);
+    </script>
+    
+</body>
+</html>

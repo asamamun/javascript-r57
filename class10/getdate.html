@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="stname" placeholder="your name">
+        <input type="date" name="" id="dob">
+        <input type="time" name="" id="dobt">
+        <input type="button" onclick="getdate()" value="get date">
+    </form>
+    <hr>
+    Name: <span id="uname"></span> <br>
+    Year: <span id="uyear"></span> <br>
+    Month: <span id="umonth"></span> <br>
+    Day: <span id="uday"></span> <br>
+    Hour: <span id="uhour"></span> <br>
+    Minuite: <span id="umin"></span> <br>
+    <script>
+        function getdate(){
+            //alert(5)
+            let n = document.getElementById("stname").value;
+            let d = document.getElementById("dob").value;
+            let t = document.getElementById("dobt").value;
+            console.log(n , d , t);
+            let arr = d.split("-");
+            let timearr = t.split(":");
+            console.log(arr);
+            document.getElementById("uname").innerHTML = n;
+            document.getElementById("uyear").innerHTML = arr[0];
+            document.getElementById("umonth").innerHTML = arr[1];
+            document.getElementById("uday").innerHTML = arr[2];
+            document.getElementById("uhour").innerHTML = timearr[0];
+            document.getElementById("umin").innerHTML = timearr[1];
+        }
+    </script>
+</body>
+</html>

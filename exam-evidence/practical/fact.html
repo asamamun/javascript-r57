@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<!-- <input type="number" id="f_val" placeholder="factorial number" onBlur="fact()"> -->
+<input type="number" id="f_val" placeholder="factorial number">
+<button type="button" onclick="fact()">Calculate</button>
+<h1 id="f_res"></h1>
+<!--button onClick="fact()">Calculate</button-->
+<script>
+
+function fact(){
+	var t = document.getElementById("f_val").value;
+	//alert(t.value);
+	var total = 1;
+	for(var i=1;i<=t;i++){
+		total = total*i; //1 * 1 , 1 * 2, 2 * 3......
+		}
+	document.getElementById("f_res").innerHTML = total;	
+	
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        class Car {
+            //you will use "this" only within class
+            constructor(n, y) {
+                this.name = n;
+                this.year = y;
+            }
+            age(x) {
+                return x - this.year;
+            }
+        }
+
+        const date = new Date();
+        let year = date.getFullYear();
+
+        const myCar = new Car("Ford", 2014);
+        const myCar2 = new Car("Toyota", 2000);
+        document.getElementById("demo").innerHTML =
+            "My car is " + myCar2.age(year) + " years old "+ myCar2.name +".";
+    </script>
+</body>
+
+</html>

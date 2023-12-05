@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //2**3
+        var base = prompt("value of base?")
+        var power = prompt("value of power?")
+        // document.write(base + " to the power " + power + " is : " + base**power);
+        let result = base;
+        for (let i = 1; i < power ; i++) {
+            result = result*base;            
+        }
+        document.write(base + " to the power " + power + " is : " + result);
+
+    </script>
+</body>
+</html>

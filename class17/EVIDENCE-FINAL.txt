@@ -1,0 +1,16 @@
+1. Create an online form to collect trainee’s data with the following fields: 25
+
+A. Input box for (i.) Name (ii) Contact
+B. Text Area for (i) Remarks
+C. Radio Buttons for (i) Sex (Male or Female identification)
+D. Checkbox for selecting Multiple Courses Like NT, IAD, DDD,ESAD etc
+E. Drop down List for selecting location Like, Banani, Dhanmondi, Mirpur
+etc.
+F. Button for submitting the form.
+Write Script with required functions to show data in a formatted way in a new
+window when user click submit button filling the form.
+
+2. Write a program which will test user email address. When the script 10
+executes, a prompt asks user to enter email address. If the script logic finds ‘@ ‘and‘.’ symbols in email address that is entered then the output will be “ Email Address is correct” otherwise “ Email Address is Wrong”.
+
+3. Find out factorial value of 5 ? 10

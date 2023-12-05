@@ -1,0 +1,8 @@
+1. Find out factorial value of 5 ? 10
+
+2. Check whether a number is prime or not? 13
+3. Take three input and find out max &amp; min number? 12
+4. If a student get 60 % marks is marked grade “B”, if 70% get “A” ,if get 80% then
+get A+ 10
+
+5. Oral

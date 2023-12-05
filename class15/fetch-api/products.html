@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="productContainer"></div>
+    <script>
+        function show(data){
+            console.log(data);
+            data.products.forEach(product => {
+               console.log(product.title); 
+            });
+        }
+        // fetch('https://dummyjson.com/products?limit=50&skip=50')
+        fetch('https://dummyjson.com/products?limit=50')
+            .then(d =>  d.json())
+            .then(d=>   show(d));
+    </script>
+</body>
+
+</html>

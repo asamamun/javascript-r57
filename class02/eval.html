@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="display">
+    <br>
+    <button onclick="show(1)">1</button>
+    <button onclick="show(2)">2</button>
+    <button onclick="show(3)">3</button>
+    <button onclick="show(4)">4</button> <br>
+    <button>5</button>
+    <button>6</button>
+    <button>7</button>
+    <button>8</button> <br>
+    <button onclick="show('+')">+</button>
+    <button onclick="show('-')">-</button>
+    <button onclick="show('*')">*</button>
+    <button onclick="show('/')">/</button>
+    <button onclick="calc()">=</button>
+    <button onclick="reset()">C</button>
+    <script>
+        /* var display = "4 + 3 * 2";
+        alert(display);
+        alert( eval(display)); 
+        x += 5;  x = x + 5
+        */
+        function show(n){
+            document.getElementById("display").value += n;
+        }
+        function calc(){
+            document.getElementById("display").value =  eval( document.getElementById("display").value);
+        }
+        function reset(){
+            document.getElementById("display").value = "";
+        }
+    </script>
+</body>
+</html>

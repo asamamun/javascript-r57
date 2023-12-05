@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="getlang()">
+    <a href="javascript:void(0)" onclick="setlang('bn')">BN</a> | 
+    <a href="javascript:void(0)" onclick="setlang('en')">EN</a> | 
+    <a href="javascript:void(0)" onclick="setlang('jp')">JP</a> |
+    <hr>
+    <h1 id="greeting"></h1> 
+    <script src="cookie.js"></script>
+    <script>
+        function setlang(l){
+            setCookie("pagelang",l,1);
+            location.reload();
+        }
+        function getlang(){
+            let l = getCookie("pagelang");
+            if(l == "bn"){
+            document.getElementById("greeting").innerHTML = "Shagotom";
+            }
+            else if(l == "en"){
+                document.getElementById("greeting").innerHTML = "Welcome";
+            }
+            else if(l == "jp"){
+                document.getElementById("greeting").innerHTML = "Japanese Welcome";
+            }
+            
+        }
+    </script>
+</body>
+</html>

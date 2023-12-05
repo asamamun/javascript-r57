@@ -1,0 +1,7 @@
+array sort
+factorial
+show grade, show result /if-else
+odd/even number print
+add 1 to 100
+
+prime

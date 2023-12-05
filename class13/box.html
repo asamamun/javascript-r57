@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="wrapper">
+
+    </div>
+    <script>
+        class Box{
+            constructor(w,h,bg){
+                this.width = w;
+                this.height = h;
+                this.backgroundColor = bg;
+            }
+            show(){
+                return `<div style="width: ${this.width}px; height: ${this.height}px; background-color: ${this.backgroundColor}; display: inline-block;"></div>`;
+            }
+        }
+        let box1 = new Box(100,200,"green");
+        let box2 = new Box(300,100,"red");
+        let box3 = new Box(200,200,"yellow");
+        document.getElementById("wrapper").innerHTML += box1.show(); 
+        document.getElementById("wrapper").innerHTML += box2.show(); 
+        document.getElementById("wrapper").innerHTML += box3.show(); 
+    </script>
+</body>
+</html>
+

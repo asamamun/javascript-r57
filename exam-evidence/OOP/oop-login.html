@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+    <p>Create a login form and validate email and password using a class. Class constructor will receive the email and password and a method validate will return whether the form is valid or not with error messages. (15/20 marks)</p>
+    <div class="container">
+        <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1">Email address</label>
+              <input type="email" id="email" class="form-control" />
+              <span class="text-danger" id="emailerror"></span>
+            </div>          
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example2">Password</label>
+              <input type="password" id="pass" class="form-control" />
+              <span class="text-danger" id="passworderror"></span>
+            </div>       
+            <!-- Submit button -->
+            <button type="button" id="signinBtn" onclick="validateForm()" class="btn btn-primary btn-block mb-4">Sign in</button>          
+          </form>
+    </div>
+    <script>
+        class Login{
+            constructor(e,p){
+                this.email = e;
+                this.pass = p;
+            }
+            #testemail(){
+                var re = /\S+@\S+\.\S+/;
+                //console.log(re.test(em))
+                return re.test(this.email)
+            }
+            validate(){
+                let m = {};
+                let error = false;
+                if(!this.#testemail()) {
+                    error=true; 
+                    m.emailerror   = "Invalid Email";                    
+                }
+                if(this.pass.length < 4 || this.pass > 8){
+                    error=true;
+                    m.passworderror ="Passwords must be between 4 and 8 characters";
+                    
+                }
+                return {e:error,message:m}
+            }
+        }
+        function validateForm(){
+            document.getElementById("emailerror").innerHTML = "";
+            document.getElementById("passworderror").innerHTML = "";
+            let em = document.getElementById("email").value;
+            let pass = document.getElementById("pass").value;
+            let l = new Login(em, pass);
+            let returnval = l.validate();            
+            if(returnval.e){
+                for (const key in returnval.message) {
+                   document.getElementById(key).innerHTML = returnval.message[key]; 
+                }
+            }
+            else{
+                alert("Form is valid")
+            }
+        }
+    </script>
+</body>
+</html>

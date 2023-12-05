@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <code>
+        document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+    </code>
+    <hr>
+    <script src="cookie.js"></script>
+    <script>
+        let d = new Date(2023,11,4,10,11,11);
+        document.write(d);
+        document.write("<br>");        
+        document.write(d.toUTCString());
+        let cookiestring = "vote="+1+"; expires="+d.toUTCString()+";";
+        document.cookie = cookiestring;
+
+        setCookie("name","IDB",2);
+        setCookie("login","no",2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>A rest parameter is preceded by three periods, and it must be the last parameter in a
+        function declaration.</h3>
+        <script>
+            function numbers(...c){
+                let total = 0;
+                c.forEach(n=> total+=n);
+                alert(total);
+                alert(Math.min(...c))
+                alert(Math.max(...c))
+            }
+
+            numbers(3,5,1,7);
+        </script>
+</body>
+</html>

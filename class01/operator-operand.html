@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Operator: + , - , *, /, %, > , < , and many more</h1>
+    <h1>Operand: operator use operand in his left and right side</h1>
+    <code>
+        <pre>
+            var x =  y + z;
+            //here x, y, z are operands
+            //here = and + are operators
+        </pre>
+    </code>
+    <h3>Operator can be unary, binary, ternary</h3>
+    <ul>
+        <li>Unary : !, -, void, typeof</li>
+        <li>Binary : +, -, *, / , > , < and many more</li>
+        <li>ternary : ?: is a ternary operator <br>
+        (condition)? value if true: value if false
+        </li>
+    </ul>
+    <script>
+        //
+        var age = prompt();
+        var married = false;
+        console.log(!married);//! unary operator
+        console.log(typeof married);//void, typeof unary operator
+        console.log(-age);//unary oprator
+        console.log(18-age);//binary operator
+        var adult = (age >= 18)?"adult":"not adult";
+        console.log(adult);
+    </script>
+</body>
+</html>

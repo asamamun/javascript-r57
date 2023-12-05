@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>if else syntax</h1>
+    <pre>
+        <code>
+            if(condition){
+                statement;
+                ...
+                ...
+                statement
+            }
+            else{
+                statement;
+                ...
+                ...
+                statement;
+            }
+        </code>
+    </pre>
+    <script>
+        
+        var n = prompt("Guess a number 1 to 10");
+        var random = parseInt ( Math.random()*10 );
+        
+        if(n == random){
+            alert("You Guessed it right!");
+        }
+        else{
+            alert("The correct number was : " + random +" . Try again!");
+        }
+    </script>
+    <h1>Get exam number from user. if value is >=33 show "You Passed" or show "You failed"</h1>
+
+</body>
+</html>

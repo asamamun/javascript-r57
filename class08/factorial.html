@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>find factorial value of a number</h1>
+    <h1>5! = 5*4*3*2*1</h1>
+    <script>
+        var n = prompt("Factorial Value",5);
+        var result = 1;
+        for (let index = 1; index <= n; index++) {
+            result = result * index;            
+        }
+        document.write("Factorial of " + n + " = " + result);
+    </script>
+</body>
+</html>

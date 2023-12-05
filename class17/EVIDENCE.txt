@@ -1,0 +1,7 @@
+1. Take an input from prompt box and check whether a number is prime or not?
+
+2. If a student get 60% marks is graded "B",if get 70% is graded "A",if get 80% then get A+
+
+3. Find out largest value among three.
+
+4. Take an number input from prompt box and calculate the factorial of that number?

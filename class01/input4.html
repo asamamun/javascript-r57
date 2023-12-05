@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="inchval" placeholder="value in inch" pattern="[0-9]" required>
+        <input type="button" value="Calculate" onclick="calc()">
+        <input type="text" readonly id="result" placeholder="result here">
+    </form>
+    
+    
+
+    <script>
+        // console.log( parseInt(Math.random()*1000))
+        function calc() {
+            //get the form value
+            var inch = document.getElementById("inchval").value;
+            //process the value and store in a variable
+            var result = inch * 2.54;
+            //store the output in a variable
+            var html = inch + " inch = " + result + " centimeter";
+            //show the result in an element
+            document.getElementById("result").value = html;
+            
+        }
+    </script>
+</body>
+</html>

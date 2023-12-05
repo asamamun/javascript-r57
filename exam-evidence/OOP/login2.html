@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1">Email address</label>
+              <input type="email" id="email" class="form-control" />
+              <span class="text-danger" id="emailerror"></span>
+            </div>          
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example2">Password</label>
+              <input type="password" id="pass" class="form-control" />
+              <span class="text-danger" id="passworderror"></span>
+            </div>       
+            <!-- Submit button -->
+            <button type="button" id="signinBtn" onclick="validateForm()" class="btn btn-primary btn-block mb-4">Sign in</button>          
+          </form>
+    </div>
+    <script>
+
+        function validateForm(){            
+            error = false;
+            document.getElementById("emailerror").innerHTML = "";
+            document.getElementById("passworderror").innerHTML = "";
+            let em = document.getElementById("email").value;
+            let pass = document.getElementById("pass").value;
+            let re = /\S+@\S+\.\S+/;
+            if(re.test(em)){}
+            else{ alert("invalid email"); error=true;}
+            if(pass.length < 4 || pass.length >8){
+                alert("invalid pass");
+                error=true;
+            }
+            if(!error) { alert("OK");}          
+        }
+    </script>
+</body>
+</html>

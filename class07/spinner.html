@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="show()">Show Spinner</button>
+    <button onclick="hide()">Hide Spinner</button>
+    <div id="spinnerContainer" style="display: none; text-align: center;">
+        text
+        <img src="spinner.gif" alt="" width="400px">
+    </div>
+    <script>
+    function show() {
+        document.getElementById("spinnerContainer").style.display = "block";
+    }
+    function hide() {
+        document.getElementById("spinnerContainer").style.display = "none";
+    }
+    </script>
+</body>
+</html>

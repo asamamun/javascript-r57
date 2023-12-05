@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function factorial2(n) { // Another version using a different loop
+        //     let i, product = 1; // Start with 1
+        //     for (i = 2; i <= n; i++) // Automatically increment i from 2 up to n
+        //         product *= i; // Do this each time. {} not needed for 1-line loops
+        //     return product; // Return the factorial
+        // }
+        // document.write(factorial2(prompt())) // => 120: 1*2*3*4*5
+
+/*         function factorial(n){
+            let f = 1;
+            for(let i=1;i<=n;i++){
+                f = f*i; //1*1, 1*2, 2*3,6*4,24*5
+            }
+            return f;
+        } */
+        function factorial(n){
+            let f = 1;
+            for(let i=n;i>1;i--){
+                f = f*i; //1*1, 1*2, 2*3,6*4,24*5
+            }
+            return f;
+        }
+        console.log(factorial(prompt())); //)
+    </script>
+</body>
+
+</html>

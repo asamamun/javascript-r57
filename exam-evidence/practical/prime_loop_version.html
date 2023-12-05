@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prime for super lazy students</title>
+<style>
+.r{color:red;}
+.g{color:green;}
+</style>
+<script>
+function isPrime(value) {
+    for(var i = 2; i < value; i++) {
+        if(value % i === 0) {return false;}
+    }
+    return value > 1;
+}
+function check(n){
+	var myTable = "<table border='1'><tr><th>Number</th><th>Result</th></tr>";
+	var totalPrimeNumbres = 0;
+	for(var j=0; j <=n; j++){
+		if(isPrime(j)){
+		//document.getElementById("res").innerHTML = "Prime";
+		myTable += "<tr><td>"+j+"</td><td class='g'>Prime</td></tr>";
+		totalPrimeNumbres++;
+		}
+	else{
+		myTable += "<tr><td>"+j+"</td><td class='r'>Not Prime</td></tr>";
+		}
+		
+		}
+		myTable += "</table>";
+		myTable = "<h3>Total: "+totalPrimeNumbres+"</h3>" + myTable; 
+		
+		document.getElementById("res").innerHTML = myTable;
+	
+	}
+</script>
+</head>
+
+<body>
+How many number to check: <input type="number" id="pnum" onBlur="check(this.value)">
+<h1 id="res"></h1>
+</body>
+</html>
+

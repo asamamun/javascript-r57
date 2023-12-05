@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>window.document.formname.elementname.value</h1>
+    <form action="" name="regform">
+        <input type="text" name="uname" placeholder="user name">
+        <input type="email" name="uemail" placeholder="user email">
+        <input type="password" name="upass" id="p" placeholder="user password">
+        <input type="button" value="Register" onclick="register()">
+    </form>
+    
+    <script>
+        function register(){
+            console.log(document.regform.uname.value);
+            console.log(document.forms[0].elements[1].value);
+            console.log(document.getElementById("p").value);
+        }
+    </script>
+</body>
+</html>

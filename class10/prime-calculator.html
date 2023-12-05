@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="prime">
+    <button onclick="check()">Check</button>
+    <h3 id="result"></h3>
+    <script>
+        function check(){
+            let flag = "green";
+
+            let n =parseInt(document.getElementById("prime").value);
+            if(n == 1 || n == 0) flag = "yellow";
+            for (let index = 2; index < n; index++) {
+                if(n%index == 0) {flag = "red"; break;  }
+            }
+            //console.log(flag);
+            if(flag == "green") {
+                document.getElementById("result").innerHTML += "The number " + n+" is  prime!<br>"; 
+            }
+            else if(flag == "red"){
+                document.getElementById("result").innerHTML += "The number " + n+" is not  prime!<br>";
+            }
+            else if(flag == "yellow"){
+                document.getElementById("result").innerHTML += "The number " + n+" is undefined for prime value! Put number greater than 1<br>";
+            }
+        }
+    </script>
+</body>
+</html>

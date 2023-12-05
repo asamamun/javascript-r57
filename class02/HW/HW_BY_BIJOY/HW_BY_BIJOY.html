@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIJOY</title>
+</head>
+
+<body>  
+
+    <script>
+        var grade = prompt("Do you want to know your result ? please give the value under the five.");
+        if (grade >5) {
+            alert ("invalid Result. (please type under five)")
+        }
+        else{
+            if (grade ==5) {
+                alert ("A+")
+            }
+            else {
+                if (grade ==4.5){
+                    alert ("A")
+                }
+                else {
+                    if (grade ==4){
+                        alert("A-")
+                    }
+                    else{
+                        if(grade==3.5){
+                            alert("B")
+                        }
+                        else{
+                            if(grade==3){
+                                alert("B-")
+                            }
+                            else{
+                                if(grade<3){
+                                    alert("Failed")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

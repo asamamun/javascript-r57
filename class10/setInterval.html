@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{ 
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="show()">click</button>
+    <img id="myimg" src="https://picsum.photos/id/1/200/300" alt="" width="200px">
+    <script>
+        var i=1;
+        var show = function(){
+            let newsrc = "https://picsum.photos/id/"+ ++i +"/200/300";
+            console.log(newsrc);
+document.getElementById("myimg").src = newsrc;
+        }
+
+        setInterval(show,4000);
+
+    </script>
+</body>
+</html>

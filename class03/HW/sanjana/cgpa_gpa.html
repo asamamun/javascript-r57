@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .button {
+            border-radius: 70%;
+            background-color: antiquewhite;
+        }
+        label {
+            display: inline-block;
+            width: 200px;}
+     .tbl{
+                border-width: 5px;
+                border-color: gray;
+                border-style: solid;
+                border-collapse: collapse;
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Hi <span id="username"></span>, Please Input Your Marks</h1>
+    <!-- <script>
+        var a= "Hello!"
+        var x= (prompt("Insert your name, student!"));
+        var space=" ";
+        var comma=','
+        alert(a + space+ x+ comma+"Input your marks!")
+    </script> -->
+    <div>
+        <form action="">
+            <label for="s1">Subject1: Math</label>
+            <input type="text" id="s1" placeholder="insert your marks"><br><br>
+            <!-- <span for="" id="res1"></span> -->
+            <label for="s2">Subject2: English</label>
+            <input type="text" id="s2" placeholder="insert your marks"><br><br>
+            <!-- <span for="" id="res2"></span> -->
+            <label for="s3">Subject3: Bangla</label>
+            <input type="text" id="s3" placeholder="insert your marks"><br><br>
+            <!-- <span for="" id="res3"></span> -->
+            <label for="s4">Subject4: Science</label>
+            <input type="text" id="s4" placeholder=" insert your marks"><br><br>
+            <!-- <span for="" id="res4"></span> <br> -->
+            <input type="button" class="button btn btn-outline-success" value="Calculate" onclick="c()">
+            <br><br>
+        </form>
+        <table border="1" class="tbl table table-info table-hover table-bordered"> 
+            <caption>See your result here</caption>
+            <tr> <th>Subject1: Math</th>
+            <th>Subject2: English</th>
+            <th>Subject3: Bangla</th>
+            <th>Subject4: Science</th></tr> 
+           <tr> <th id="res1"></th>
+            <th id="res2"></th>
+            <th id="res3"></th>
+            <th id="res4"></th>
+        </tr>
+        </table>
+    </div>
+
+    <script>
+        var name = prompt("Your Name Please:");
+        document.getElementById("username").innerHTML = name;
+        function c() {
+            // alert(5)
+            var s1 = Number(document .getElementById("s1").value);
+            var s2 = Number(document.getElementById("s2").value);
+            var s3 = Number(document.getElementById("s3").value);
+            var s4 = Number(document.getElementById("s4").value);
+            if (s1 >= 80) document.getElementById("res1").innerHTML = "Grade A+ , GPA 5"; 
+            else if (s1 >= 70) document.getElementById("res1").innerHTML = "Grade A , GPA 4.5"; 
+            else if (s1 >= 60) document.getElementById("res1").innerHTML = "Grade A- , GPA 4"; 
+            else if (s1 >= 33)  document.getElementById("res1").innerHTML = "Grade C , GPA 2.5"; 
+            else  document.getElementById("res2").innerHTML = "Grade F, GPA 0.0"; 
+            if (s2 >= 80) document.getElementById("res2").innerHTML = "Grade A+ , GPA 5"; 
+            else if (s2 >= 70) document.getElementById("res2").innerHTML = "Grade A , GPA 4.5"; 
+            else if (s2 >= 60) document.getElementById("res2").innerHTML = "Grade A- , GPA 4"; 
+            else if (s2 >= 33)  document.getElementById("res2").innerHTML = "Grade C , GPA 2.5"; 
+            else  document.getElementById("res1").innerHTML = "Grade F, GPA 0.0"; 
+            if (s3 >= 80) document.getElementById("res3").innerHTML = "Grade A+ , GPA 5"; 
+            else if (s3 >= 70) document.getElementById("res3").innerHTML = "Grade A , GPA 4.5"; 
+            else if (s3 >= 60) document.getElementById("res3").innerHTML = "Grade A- , GPA 4"; 
+            else if (s3 >= 33)  document.getElementById("res3").innerHTML = "Grade C , GPA 2.5"; 
+            else  document.getElementById("res3").innerHTML = "Grade F, GPA 0.0"; 
+            if (s4 >= 80) document.getElementById("res4").innerHTML = "Grade A+ , GPA 5"; 
+            else if (s4 >= 70) document.getElementById("res4").innerHTML = "Grade A , GPA 4.5"; 
+            else if (s4 >= 60) document.getElementById("res4").innerHTML = "Grade A- , GPA 4"; 
+            else if (s4 >= 33)  document.getElementById("res4").innerHTML = "Grade C , GPA 2.5"; 
+            else  document.getElementById("res4").innerHTML = "Grade F, GPA 0.0"; 
+
+
+        }
+    </script>
+    </script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>form value in new window</title>
+<style>
+label{display:inline-block; width:100px;margin-bottom:10px;}
+</style>
+</head>
+
+<body>
+<form name="a">
+<label>User name</label>
+<input type="text" id="uname"/><br>
+<label>Contact</label>
+<input type="text" id="contact"/><br>
+<label>Remark</label>
+<textarea id="remark"></textarea><br>
+<label>Sex</label>
+Male<input type="radio" name="s" value="male"> | 
+Female<input type="radio" name="s" value="female"><br>
+<label>Course</label>
+NT: <input type="checkbox" name="course" value="nt"> |
+WPSI: <input type="checkbox" name="course" value="wpsi"> |
+DDD: <input type="checkbox" name="course" value="ddd"> |
+J2EE: <input type="checkbox" name="course" value="j2ee"> <br>
+<label>Location</label>
+<select id="loc">
+<option>Banani</option>
+<option>Dhanmondi</option>
+<option>Mirpur</option>
+</select>
+<br>
+<input type="button" value="submit" onClick="check()">
+</form>
+<script>
+function check(){
+	//alert(document.getElementsByName("course")[1].checked);
+	var uname = document.getElementById("uname").value;
+	var contact = document.getElementById("contact").value;
+	var remark = document.getElementById("remark").value;	
+	var sex = document.forms[0].s.value;
+	var coursearr =  document.getElementsByName("course");
+	var course = [];
+	for(var i=0; i < coursearr.length; i++){
+		if(coursearr[i].checked){
+			course.push(coursearr[i].value);
+			}
+		//alert(course);	
+		}
+	var loc = document.getElementById("loc").value;
+	var w = window.open("","","width=400,height=300");
+	w.document.write("Uname: " + uname + "<br>");
+	w.document.write("Contact: " + contact + "<br>");
+	w.document.write("Remark: " + remark + "<br>");
+	w.document.write("Sex: " + sex + "<br>");
+	w.document.write("Course: " + course + "<br>");
+	w.document.write("Location: " + loc + "<br>");
+	//w.close();	
+	}
+</script>
+</body>
+</html>

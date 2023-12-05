@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 10px 10px;
+            height: 50px;
+            width: 60px;
+            margin: 5px 5px 0;
+        }
+
+        div.main {
+            width: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 285px;
+            padding: 5px 0;
+            margin-left: 5px;
+        }
+        h1{
+            width: 100%;
+            border: 1px solid red;
+        }
+
+        span {
+            display: inline-block;
+            width: 80%;
+            margin-left: 50PX;
+            color: green;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Demo Calculator <span>2$ Only.</span></h1>
+    <div class="main">
+        <!-- <form action=""> -->
+        <input type="text" id="result">
+        <div>
+            <button onclick=""></button>
+            <button onclick=""></button>
+            <button onclick=""></button>
+            <button onclick="back()"><i class="material-icons">backspace</i></button>
+        </div>
+        <div>
+            <button onclick="insert('(')" >(</button>
+            <button onclick="insert(')')">)</button>
+            <button onclick="insert('%')">%</button>
+            <button onclick="reset()">AC</button>
+        </div>
+        <div>
+            <button onclick="insert(7)">7</button>
+            <button onclick="insert(8)">8</button>
+            <button onclick="insert(9)">9</button>
+            <button onclick="insert('/')">/</button>
+        </div>
+        <div>
+            <button onclick="insert(4)">4</button>
+            <button onclick="insert(5)">5</button>
+            <button onclick="insert(6)">6</button>
+            <button onclick="insert('*')">*</button>
+        </div>
+        <div>
+            <button onclick="insert(1)">1</button>
+            <button onclick="insert(2)">2</button>
+            <button onclick="insert(3)">3</button>
+            <button onclick="insert('-')">-</button>
+        </div>
+        <div>
+            <button onclick="insert(0)">0</button>
+            <button onclick="insert('.')">.</button>
+            <button onclick="run()">=</button>
+            <button onclick="insert('+')">+</button>
+        </div>
+        </form>
+    </div>
+    <script>
+        var mt = "";
+        function insert(s) {
+            document.getElementById("result").value += s;
+        }
+        function run() {
+            document.getElementById("result").value = eval(document.getElementById("result").value);
+        }
+        function reset() {
+            document.getElementById("result").value = mt;
+        }
+        function back(){
+            let s = document.getElementById("result").value;
+            if(s.length > 0){
+            let news = s.substring(0, s.length-1);
+            document.getElementById("result").value = news;
+            }
+        }
+    </script>
+</body>
+
+</html>

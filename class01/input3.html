@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="inchval" placeholder="value in inch" pattern="[0-9]" required>
+        <input type="button" value="Calculate" onclick="calc()">
+    </form>
+    
+    <h1 id="result"></h1>
+    <h1 id="result2"></h1>
+
+    <script>
+        function calc() {
+            var inch = document.getElementById("inchval").value;
+            var result = inch * 2.54;
+            var html = inch + " inch = " + result + " centimeter";
+            document.getElementById("result").innerHTML = html;
+            document.getElementById("result2").innerHTML = html;
+        }
+    </script>
+</body>
+</html>

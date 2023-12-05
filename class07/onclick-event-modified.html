@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changeColor('red')">Change To Red</button>
+    <button onclick="changeColor('green')">Change To Green</button>
+    <button onclick="changeColor('blue')">Change To Blue</button>
+    <script>
+        // escape character \
+        // var idb = "Islamic \"Development\" Bank is our\'s bank";
+        // console.log(idb);
+        //here c is function variable
+        function changeColor(c){
+            document.getElementsByTagName("body")[0].style.backgroundColor = c;
+        }
+
+    </script>
+</body>
+</html>

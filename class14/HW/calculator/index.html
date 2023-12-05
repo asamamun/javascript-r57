@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @font-face {
+            font-family: digital;
+            src: url(assets/font/digital.ttf);
+        }
+
+        td {
+            text-align: center;
+        }
+
+        #result {
+            padding: 5px 2px;
+            width: 336px;
+            border-radius: 5px;
+            color: black;
+            font-family: digital;
+            font-size: 50px;
+            text-align: right;
+            font-weight: 700;
+            background-color: black;
+        }
+
+        button {
+            padding: 3px;
+            font-weight: 700;
+            font-size: 20px;
+            width: 70px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: antiquewhite;
+        }
+
+        #light {
+            background-image: url(assets/img/OIP.jpg);
+            width: 15px;
+            height: 15px;
+            background-size: 28px;
+            background-position: -6px -0px;
+            border-radius: 50%;
+            margin: 7px 7px;
+            float: left;
+        }
+        #soundbg{
+            background-image: url(assets/img/sound_on_off.jpg);
+            width: 30px;
+            height: 14px;
+            background-size: 49px;
+            background-position: -9px -9px;
+            border-radius: 7px 7px 7px 7px;
+        }
+        #sound:checked+label>#soundbg{
+            background-position: -9px -27px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 350px; margin:100px auto; background-image: linear-gradient(#1F8CE8, #40D2A4, #1F8CE8); padding: 10px; border-radius: 5px;">
+        <table style="width: 300px;">
+            <tr>
+                <td colspan="4" style="text-align: left; color: rgb(72, 66, 66)"><p style="margin-left: 2px;"><b>ISRAT AHAMED SABBIR</b></p></td>
+            </tr>
+            <tr>
+                <td colspan="100">
+                    <input type="text" name="result" id="result" autofocus />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="light"></div>
+                </td>
+                <td>
+                    <input type="checkbox" name="sound" id="sound" style="display: none;" onclick="chackBoxFunc()">
+                    <label for="sound" id="soundLavel"><div id="soundbg"></div></label>
+                </td>
+                <td colspan="2">
+                    <p id="setTime" style="color:rgb(233, 235, 235);"></p>
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="onOffFunc()" style="background-color: red;"><i
+                            class="fa-solid fa-power-off"></i></button></td>
+                <td><button onclick="reset()" style="background-color: green;" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">AC</button></td>
+                <td><button onclick="backspace()" style="background-color: green;" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">&larr;</button></td>
+                <td><button onclick="enterFunction('/')" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">/</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="enterFunction('\(')" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">(</button></td>
+                <td><button onclick="enterFunction('\)')" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">)</button></td>
+                <td><button onclick="enterFunction('%')" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">%</button></td>
+                <td><button onclick="enterFunction('*')" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">*</button></td>
+            </tr>
+            <tr>
+                <td><button id="saven" onclick="enterFunction(7)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">7</button></td>
+                <td><button id="eight" onclick="enterFunction(8)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">8</button></td>
+                <td><button id="nine" onclick="enterFunction(9)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">9</button></td>
+                <td><button onclick="enterFunction('-')" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">-</button></td>
+            </tr>
+            <tr>
+                <td><button id="four" onclick="enterFunction(4)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">4</button></td>
+                <td><button id="five" onclick="enterFunction(5)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">5</button></td>
+                <td><button id="six" onclick="enterFunction(6)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">6</button></td>
+                <td><button id="plus" onclick="enterFunction('+')" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">+</button></td>
+            </tr>
+            <tr>
+                <td><button id="one" onclick="enterFunction(1)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">1</button></td>
+                <td><button id="two" onclick="enterFunction(2)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">2</button></td>
+                <td><button id="three" onclick="enterFunction(3)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">3</button></td>
+                <td rowspan="2"><button id="equal" onclick="resultFunction()" style="height: 100px;"
+                        onmousedown="lightBlinkDown()" onmouseup="lightBlinkUp()">=</button></td>
+            </tr>
+            <tr>
+                <td><button id="zero" onclick="enterFunction(0)" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">0</button></td>
+                <td><button id="zero" onclick="enterFunction('00')" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">00</button></td>
+                <td><button onclick="enterFunction('.')" onmousedown="lightBlinkDown()"
+                        onmouseup="lightBlinkUp()">.</button></td>
+
+            </tr>
+        </table>
+        <script>
+            var claculator = false;
+            var soundEnableDisable = true;
+            var clickAudio = new Audio("assets/keyboard5-88069.mp3");
+            var onOffAudio = new Audio("assets/light-switch-156813.mp3");
+            function chackBoxFunc(){
+                //soundEnableDisable = document.getElementById("sound").chacked ? true : false;
+                if(soundEnableDisable == true){
+                    soundEnableDisable = false;
+                }else{
+                    soundEnableDisable = true
+                }
+            }
+            function enterFunction(n) {
+                document.getElementById("result").value += n;
+            }
+            function resultFunction() {
+                result = document.getElementById("result").value;
+                document.getElementById("result").value = eval(result);
+            }
+            function reset() {
+                document.getElementById("result").value = "";
+            }
+            function backspace() {
+                let currentDisplay = document.getElementById('result').value;
+                document.getElementById('result').value = currentDisplay.slice(0, -1);
+            }
+            function onOffFunc() {
+                if (document.getElementById('result').style.backgroundColor == "azure") {
+                    document.getElementById('result').style.backgroundColor = "black";
+                    document.getElementById('light').style.backgroundPosition = "-6px 0px";
+                    document.getElementById("result").value = "";
+                    onOffAudio.play();
+                    claculator = false;
+                } else {
+                    document.getElementById('result').style.backgroundColor = "azure";
+                    document.getElementById('light').style.backgroundPosition = "-6px -26px";
+                    document.getElementById("result").value = "";
+                    onOffAudio.play();
+                    claculator = true;
+                }
+            }
+            function lightBlinkDown() {
+                document.getElementById('light').style.backgroundPosition = "-6px -13px";
+                if (claculator == true && soundEnableDisable == true) {
+                    clickAudio.play()
+                }
+            }
+            function lightBlinkUp() {
+                if (claculator == false) {
+                    document.getElementById('light').style.backgroundPosition = "-6px 0px";
+                } else {
+                    document.getElementById('light').style.backgroundPosition = "-6px -26px";
+                }
+            }
+            function getTime(){
+                var dateObj = new Date();
+                var totalDate = dateObj.toLocaleString([], {hour12: true})
+                //document.getElementById("setTime").innerHTML = "<b>"+dateObj.getHours()+" : "+dateObj.getMinutes()+" : "+dateObj.getSeconds()+"</b>";
+                var getArrayTime = totalDate.split(", ")
+                document.getElementById("setTime").innerHTML = getArrayTime[1];
+            }
+            setInterval(getTime, 1000);
+            
+        </script>
+    </div>
+</body>
+
+</html>

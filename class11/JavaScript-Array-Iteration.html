@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <table class="table table-info table-hover">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <tbody id="maindata">
+
+        </tbody>
+    </table>
+    <script>
+        const products = [
+            { name: "X00", price: 10 },
+            { name: "X01", price: 123 },
+            { name: "X02", price: 144 },
+            { name: "X03", price: 178 },
+            { name: "X04", price: 189 },
+            { name: "X05", price: 333 },
+            { name: "X06", price: 123 },
+            { name: "X07", price: 999 }
+        ];
+        let html = ``;
+        products.forEach( (a,i) => {
+            // console.log(e)
+            html += `<tr>
+    <td>${i+1} </td>
+    <td>${a.name} </td>
+    <td>${a.price}</td>
+    <td> <a href="#">Add to Cart</a></td>
+</tr>`
+        } )
+        document.getElementById("maindata").innerHTML = html;
+    </script>
+    <hr>
+    <script>
+        const numbers = [45, 4, 9, 16, 25];
+let txt = "";
+numbers.forEach( e=> {console.log(e*e)} );
+    </script>
+    <hr>
+    <h1>Map</h1>
+    <p>The map() method creates a new array by performing a function on each array element.</p>
+<div id="colorContainer"></div>
+    <script>
+let colors = ["red", "green", "blue", "yellow", "pink","violet", "fuchsia", "purple"];
+// colors.forEach(c=> {document.write(c);} );
+let colorHtml = colors.map(c=>`<span style="margin-right:10px;color:${c}">${c}</span>`);
+colorHtml.forEach(e=> document.getElementById("colorContainer").innerHTML += e);
+    </script>
+    <hr>
+    <script>
+        let marks = [99,88,77,56,84,22,33]
+        let marksWithGrade = marks.map(m => {
+            if(m>=90) return m + ":" + "A+";
+            else if(m>=60) return m+":" + "B+";
+            else return m + ":" + "F";
+        });
+        console.log(marksWithGrade);
+    </script>
+</body>
+
+</html>

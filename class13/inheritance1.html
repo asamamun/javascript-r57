@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student{
+            name;
+            roll;
+            //constructor can take parameters
+            constructor(n,r){
+                this.name = n;
+                this.roll = r;
+            }
+            show(){
+                return "I am " + this.name + ". My roll is: " + this.roll;
+            }
+        }
+        //a class can be a child of a parent class. here PrimaryStudent class is the child class of Student class
+        class PrimaryStudent extends Student{}
+        class SecondaryStudent extends Student{}
+        class InterStudent extends Student{}
+        class VarsityStudent extends Student{}
+        class IdbStudent extends Student{
+            tspname;
+            coursename;
+            constructor(n,r,t,c){
+                //super keyword is use to call the parent constructor from child constructor
+                super(n,r);
+                this.tspname = t;
+                this.coursename = c;
+            }
+            //method overriding
+            show(c){
+                return "<div style='color:"+c+"'>I am " + this.name + ". My roll is: " + this.roll + ".My TSP name is: " + this.tspname + ".My Course name is: " + this.coursename + "<br></div>";
+            }
+        }
+
+        let is1 = new IdbStudent("Mr Twist", " 123","GNSL","WDPF");
+        document.write(is1.show("green"));
+        let is2 = new IdbStudent("Mr Sabbir", "2123","GNSL","WDPF");
+        document.write(is2.show("yellow"));
+        // document.write(ps1.tspname);
+        // document.write(ps1.coursename);
+
+        let ps2 = new PrimaryStudent("Mr. Mango", "77");
+        document.write(ps2.show());
+    </script>
+</body>
+</html>

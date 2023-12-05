@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var email = "email(at)gmail.com";
+        var name = "  a b c d e f g             ".trim();
+        name = name.replaceAll(" ","");
+        console.log(name.length);
+        var email = "email@gmail.com";
+        var atfound = email.indexOf("@");
+        var dotfound = email.indexOf(".");
+        // console.log(atfound , dotfound);
+        if(name.length < 6){
+            console.log("Invalid Username, should be 6 characters at least");
+        }
+        if(atfound != "-1" && dotfound != "-1"){
+            console.log("email address valid")
+        }
+        else{
+            console.log("email address not valid");
+        }
+
+
+    </script>
+</body>
+</html>

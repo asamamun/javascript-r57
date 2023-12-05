@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <pre>
+String length
+String slice()
+String substring()
+String substr()
+String replace()
+String replaceAll()
+String toUpperCase()
+String toLowerCase()
+String concat()
+String trim()
+String trimStart()
+String trimEnd()
+String padStart()
+String padEnd()
+String charAt()
+String charCodeAt()
+String split()
+</pre>
+    </div>
+    <script>
+        var email = "email(at)gmai.com";
+        var idb = "Islamic Development Bank. Bank Account";
+        var hobby = " a b ";
+        console.log(hobby.length);
+        console.log(idb[3]);
+        console.log(idb);
+        //slice(start,end)
+        console.log(idb.slice(0,4))//isla
+        //substring(start,end)
+        console.log( idb.substring(0,4))//
+        //substr(start,length)
+        console.log(idb.substr(10,5));
+        //replace(searchstring,replacedstring)
+        console.log(idb.replace("Bank","center"))
+        //replaceAll(searchstring,replacedstring)
+        console.log(idb.replaceAll("Bank","center"))
+        console.log(idb.toUpperCase())
+        console.log(idb.toLowerCase())
+        console.log(idb.concat(".another sentence."));
+        console.log(hobby.trim().length);
+        console.log(hobby.trimStart().length);
+        console.log(hobby.trimEnd().length);
+        // console.log(hobby);
+        var num = "5555";
+        console.log(num.padStart(8,"*"));
+        console.log(num.padEnd(8,"*"));
+        console.log(num.padStart(8,"*").padEnd(13,"*"));
+        //charAt: character at index number
+        console.log(idb.charAt(9));
+        //indexOf: index of a character or group of characters
+        console.log(idb.indexOf("lop"));//-1 menos not found
+        let colors = prompt("Your fav colors,separate with comma","red,green,yellow");
+        //split converts string into array
+        console.log(colors.split(","))
+        var para = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ut, laboriosam inventore doloribus cumque reiciendis illo hic minima quibusdam, repellat, sequi magni dolor esse beatae! Repellendus ducimus pariatur accusamus dolorum!';
+        var arr = para.split(" ");
+        console.log(arr);
+        console.log(arr.length);
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

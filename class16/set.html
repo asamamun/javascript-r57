@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>A JavaScript Set is a collection of unique values.
+
+        Each value can only occur once in a Set.</h1>
+        <table class="ws-table-all">
+            <tbody><tr><th width="120px">Method</th><th>Description</th></tr>
+            <tr><td>new Set()</td><td>Creates a new Set</td></tr>
+            <tr><td>add()</td><td>Adds a new element to the Set</td></tr>
+            <tr><td>delete()</td><td>Removes an element from a Set</td></tr>
+            <tr><td>has()</td><td>Returns true if a value exists in the Set</td></tr>
+            <tr><td>forEach()</td><td>Invokes a callback for each element in the Set</td></tr>
+            <tr><td>values()</td><td>Returns an iterator with all the values in a Set</td></tr>
+            <tr><th width="120px">Property</th><th>Description</th></tr>
+            <tr><td>size</td><td>Returns the number of elements in a Set</td></tr>
+            </tbody></table>
+        <script>
+            let stud = new Set();
+            stud.add("Nasrin");
+            stud.add("Kalam");
+            stud.add("Kalam");
+            stud.add("Kalam");
+            stud.add("Sanjana");
+            stud.add("Syed");
+            stud.add("Sabbir");
+            stud.add("Muntaha");
+            console.log(stud.size);
+            console.log(stud.has("jui"));
+            console.log(stud.delete("Syed"));
+            stud.forEach( (e)=>{console.log(e);})
+
+        </script>
+</body>
+</html>

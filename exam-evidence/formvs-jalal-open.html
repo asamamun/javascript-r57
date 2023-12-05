@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        Name : <input type="text" id="uname"> <br>
+        Details: <br> <textarea name="" id="det" cols="30" rows="10"></textarea><br>
+        Team :
+        <select name="" id="team">
+            <option value="Argentina">Argentina</option>
+            <option value="France">France</option>
+        </select>
+        <br>
+        Gender:
+        Male: <input type="radio" name="g" class="g" value="Male" checked> |
+        Female: <input type="radio" name="g" class="g" value="Female"> |
+        <br>
+        Your Choice:
+        A <input type="checkbox" name="choice" id="" class="la" value="A"> |
+        B <input type="checkbox" name="choice" id="" class="la" value="B"> |
+        C <input type="checkbox" name="choice" id="" class="la" value="C"> |
+        D <input type="checkbox" name="choice" id="" class="la" value="D"> |
+        E <input type="checkbox" name="choice" id="" class="la" value="E"> |
+        <!-- <button type="button" onclick="checkAll()">Check all</button> <br> -->
+        <!-- <button type="button" onclick="getCheckboxValue()">Submit</button> <br> -->
+        <!-- <h4 style="color:green" id="result"></h4> -->
+    </br>
+        <input type="button" value="get form values" onclick="getval()">
+        <hr>
+        <div id="message"></div>
+
+        <h4 style="color:green" id="result"></h4>
+
+
+    </form>
+    <script>
+        
+        function getval() {
+            let vals = "";
+            let un = document.getElementById("uname").value;
+            let details = document.getElementById("det").value;
+            let t = document.getElementById("team").value;
+            let g = document.querySelector("input[name='g']:checked").value;
+            // alert(un + " : " + details + " : " + t + " : " + g);
+            vals += "Name:" + un;
+            vals += "<br>Details:" + details;
+            vals += "<br>Team:" + t;
+            vals += "<br>Gender:" + g;
+
+            document.getElementById("result").innerHTML = "";
+            var markedCheckbox = document.querySelectorAll('.la:checked');
+            for (var checkbox of markedCheckbox) {
+                //document.getElementById("result").append('My choice:'+" "+checkbox.value +" ");
+                vals += '<br>My choice:'+" "+checkbox.value;
+            }
+           let w = window.open("","","width=400px,height=300px");
+           w.document.write(vals)
+        }
+
+        
+        
+
+        
+
+    </script>
+</body>
+
+</html>
