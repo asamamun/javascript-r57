@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array desctucturing</h1>
+    <script>
+        let studentArray = [
+  ["Student1", 18, "Grade A"],
+  ["Student2", 19, "Grade B"],
+  ["Student3", 20, "Grade C"],
+  ["Student4", 21, "Grade A"],
+  ["Student5", 22, "Grade B"],
+  ["Student6", 23, "Grade C"],
+  ["Student7", 24, "Grade A"],
+  ["Student8", 25, "Grade B"],
+  ["Student9", 26, "Grade C"],
+  ["Student10", 27, "Grade A"]
+];
+/* studentArray.forEach( e=> {
+    console.log(e[0] +" : "+ e[2]);
+}); */
+studentArray.forEach( ([n,,g]) => {
+   document.write(n +" : "+ g + "<br>");
+});
+
+    </script>
+</body>
+</html>

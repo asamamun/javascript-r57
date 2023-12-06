@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>8.3.5 Destructuring Function Arguments into Parameters</h1>
+    <script>
+        let studentinfo = [
+            ["101","Student A","GNSL", 57, "WDPF"],
+            ["102","Student B","USSL", 58, "NT"],
+            ["103","Student C","GNSL", 57, "DDD"],
+        ];
+        let numbers = [2,3,4,5];
+        /* function addFirstTwoNumbers(a,b,...c){
+            return a+b;
+        } */
+        //array destructuring
+        function addFirstTwoNumbers([a,,b]){
+            return a+b;
+        }
+        // console.log(addFirstTwoNumbers(5,6,6,7))
+        console.log(addFirstTwoNumbers(numbers))
+        let alphabatsArr = ["a","b","c","d","e","f","g","h","i","j"];
+        let [fe,,te,...restelem] =alphabatsArr;
+/*         let f_elem = a[0];
+        let t_elem = a[2]; */
+        console.log(alphabatsArr);
+        console.log(fe);
+        console.log(te);
+        console.log(restelem);
+    </script>
+</body>
+</html>
