@@ -15,11 +15,16 @@
             padding: 0;
         }
         .singleproduct{
-           margin: 10px 0px;
+           margin: 20px 0px;
+           transition: all 1s;
            /* border:5px solid gray;  */
         }
         .singleproduct:hover{
             box-shadow: 0px 0px 5px 10px green;
+        }
+        #pcon{
+            max-width: 1200px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -35,13 +40,14 @@
                 p.forEach(({id,title,price,thumbnail,images}) => {
                    let [firstImage,,thirdImage,,lastimage] = images; 
                    console.log(thirdImage , lastimage);
-                  html += `<div class='singleproduct'>
-                    <h3>${title}</h3>
+                  html += `<div class='singleproduct'><fieldset>
+                    <legend> <h3> ${title}</h3> </legend>
                     <img src="${firstImage?firstImage:"nope-not-here.webp"}" width="33%"></img>
                     <img src="${thirdImage?thirdImage:"nope-not-here.webp"}" width="33%"></img>
                     <img src="${lastimage?lastimage:"nope-not-here.webp"}" width="33%"></img>
                     <hr>
                     <p>Price: ${price}<p>
+                        </fieldset>
                     </div>`;  
                 });
                 document.getElementById("pcon").innerHTML = html;
