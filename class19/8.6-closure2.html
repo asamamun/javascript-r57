@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="run()">Add</button>
+    <h1 id="res"></h1>
+    <script>
+        let c = counter();
+/*         console.log(c.count())
+        console.log(c.count())
+        console.log(c.count())
+        c.reset();
+        console.log(alert(c.count())) */
+        function run(){
+         document.getElementById("res").innerHTML= c.count();
+        }
+        
+        function counter() {
+            let n = 0;
+            return {
+                count: function () { return n++; },
+                reset: function () {  n=0; }
+            };
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>8.4 Functions as Values</h1>
+    <h3>The most important features of functions are that they can be defined(created) and invoked(call).
+        Function definition and invocation are syntactic features of JavaScript and of most
+        other programming languages. In JavaScript, however, functions are not only syntax
+        but also values, which means they can be assigned to variables, stored in the properties of objects or the
+        elements of arrays, passed as arguments to functions, and so on.</h3>
+    <script>
+        function square(x) { return x * x; }
+        console.log(square);
+        let s = square;
+        console.log(s(5));
+        //an object
+        let nur = {
+            name: "Mr. Nur",
+            Id: "10123254",
+            email : "john@example.com",
+            married: true,
+            height: 175,
+            weight:85
+        }
+        //here a function is stored in the properties of o.
+        let o = {
+            name: "object o",            
+            cube:function(n){return n*n*n;}
+        };
+        o.square = function(x) { return x*x; },
+        console.log(o);
+        console.log(o.square(10));
+        console.log(o.cube(10));
+let uniqueInteger={};
+        uniqueInteger.counter = 0;
+        uniqueInteger.tax =  0.5;
+        console.log(uniqueInteger);
+
+    </script>
+</body>
+
+</html>

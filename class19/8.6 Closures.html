@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h3>
+        A closure is the combination of a function bundled together (enclosed) with references to its surrounding state
+        (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner
+        function.
+    </h3>
+    <h3>
+        Remember the fundamental rule of lexical scoping: JavaScript functions are executed using the scope they were
+        defined in.
+    </h3>
+    <h3>
+        This, in a nutshell, is the surprising and powerful nature of closures: they capture the local variable (and
+        parameter) bindings of the outer function within which they are defined.
+    </h3>
+    <h3>
+        Closures capture the local variables of a single function invocation and can use those variables as private
+        state.
+    </h3>
+    <script>
+        /* let scope = "global scope"; // A global variable
+        function checkscope() {
+            let scope = "local scope"; // A local variable
+            function f() { return scope; } // Return the value in scope here
+            return f();
+        }
+        console.log(checkscope()) // => "local scope" */
+        let scope = "global scope"; // A global variable
+        function checkscope() {
+            let scope = "local scope"; // A local variable
+            function f() { return scope; } // Return the value in scope here
+            return f;
+        }
+        console.log(scope) // => "local scope"
+        console.log(checkscope()()) // => "local scope"
+    </script>
+    <hr>
+    <script>
+        let uniqueInteger = (function () { // Define and invoke
+            let counter = 0; // Private state of function below
+            return function () { return ++counter; };
+        }());
+        //let uniqueIntege = function () { return ++counter; }
+        /* console.log(uniqueInteger()); // Define and invoke
+        console.log(uniqueInteger()); // Define and invoke
+        console.log(uniqueInteger()); // Define and invoke
+        console.log(uniqueInteger()); // Define and invoke */
+    for (let index = 0; index < 5; index++) {
+        console.log(uniqueInteger());
+        
+    }
+    //the main concept is: with closures we can access local variables from global scope
+    </script>
+</body>
+
+</html>

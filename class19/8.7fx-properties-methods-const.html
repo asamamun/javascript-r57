@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>8.7 Function Properties, Methods, and Constructor</h1>
+    <h3>Since functions are objects, they can have properties and methods, just like any other object.</h3>
+    <h3>function properties are: length, name, prototype</h3>
+    <h3>function methods are: call, apply</h3>
+    <script>
+        function x(a,b,c){ return a+b+c; };
+        console.log(x(2,1,7))
+        console.log(x.length)
+        console.log(x.name)
+        //console.log(x.prototype.constructor(1,2,3))
+        
+        console.log(x.call(x,4,3,2))
+        console.log(x.apply(x,[4,3,2]))
+    </script>
+</body>
+</html>
