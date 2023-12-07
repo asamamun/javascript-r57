@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>8.8.2 Higher-Order Functions</h1> <hr>
+    <h3>A higher-order function is a function that operates on functions, taking one or more
+        functions as arguments and returning a new function</h3>
+        <script>
+            /*
+            function a(b){
+                return function(){}
+            }
+            let newfunc = a(function(){});
+            */
+            const names= ['John', 'Tina','Kale','Max']
+
+//Function using function fn as a parameter
+function useFunction(arr,fn){
+  for(let i=0; i<arr.length; i++){
+    fn(arr[i]);
+  }
+}  
+function useFunction2(obj){
+  for(let i=0; i<obj.val.length; i++){
+    obj.fn(obj.val[i]);
+  }
+}  
+
+let objtopass = {
+    val:[2,3,4],
+    fn: function(val){ console.log(val*val);} 
+}
+
+useFunction2(objtopass)
+
+//Function that is being used as a parameter
+function argFn (name){
+  console.log("Hello " + name );
+}
+function titleFn (name){
+  console.log("Mr " + name );
+}
+function double(n){
+    console.log(n*2);
+}
+
+// console.log(argFn);
+
+//calling useFunction() with argFn() as a parameter
+useFunction(names,argFn);
+useFunction(names,titleFn);
+useFunction([5+6,6,7,9,5],double);
+
+ </script>
+</body>
+</html>

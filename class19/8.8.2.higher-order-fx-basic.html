@@ -1,0 +1,11 @@
+<script>
+    function callfunc(n,fn){
+        return fn(n);
+    }
+
+    function sq(n){ return n*n}
+    function cube(n){ return n*n*n;}
+
+    console.log(callfunc(5,sq))
+    console.log(callfunc(5,cube))
+</script>
