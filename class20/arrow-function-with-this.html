@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 pre {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>
+        <pre>
+            The handling of this is also different in arrow functions compared to regular functions.
+
+In short, with arrow functions there are no binding of this.
+
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions the this keyword always represents the object that defined the arrow function.
+
+Let us take a look at two examples to understand the difference.
+
+Both examples call a method twice, first when the page loads, and once again when the user clicks a button.
+
+The first example uses a regular function, and the second example uses an arrow function.
+
+The result shows that the first example returns two different objects (window and button), and the second example returns the window object twice, because the window object is the "owner" of the function.
+        </pre>
+    </h3>
+    <input class="a" type="text" name="" id="" onchange="callme(event,this)">
+
+    <script>
+        function callme(e, t) {
+            console.log(t.value)
+            console.log(e)
+            console.log(e.type)
+            console.log(e.target.localName)
+            console.log(e.target.nodeName)
+        }
+    </script>
+    <hr>
+    <button id="btn">Click Me!</button>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <input type="text" id="username">
+    <script>
+        let obj = window.navigator.geolocation;
+        document.getElementById("demo2").innerHTML = obj;
+        let hello = "";
+
+        /*         hello = function () {
+                    console.log(this);
+                    document.getElementById("demo").innerHTML += this;
+                } */
+        hello = () => {
+            console.log(this);
+            document.getElementById("demo").innerHTML += this;
+        }
+
+        //The window object calls the function:
+        window.addEventListener("load", hello);
+
+        //A button object calls the function:
+        document.getElementById("btn").addEventListener("click", hello);
+        document.getElementById("username").addEventListener("blur", hello);
+    </script>
+</body>
+
+</html>

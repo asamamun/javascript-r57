@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //let x = "abc";
+        //if(x.toUpperCase() === "ABC") console.log("Working");
+    </script>
+    <h1>Example with Normal Function:</h1>
+    <pre>
+        <code>
+            function NormalFunction() {
+                this.value = 42;
+    
+                this.getValue = function () {
+                    console.log(this.value);
+                };
+            }
+    
+            const normalObj = new NormalFunction();
+            normalObj.getValue(); // Output: 42
+    
+            const getValueFunction = normalObj.getValue;
+            getValueFunction(); // Output: undefined or an error, depending on the JavaScript environment
+        </code>
+    </pre>
+    <script>
+        function NormalFunction() {
+            this.value = 42;
+
+            this.getValue = function () {
+                console.log(this.value);
+            };
+        }
+
+        const normalObj = new NormalFunction();
+        normalObj.getValue(); // Output: 42
+
+        const getValueFunction = normalObj.getValue;
+        getValueFunction(); // Output: undefined or an error, depending on the JavaScript environment
+
+    </script>
+    <h3>
+        In the above example, when getValueFunction is called separately, this is no longer tied to normalObj. As a result, this.value is undefined or may throw an error in strict mode.
+    </h3>
+    <hr>
+    <h1>Example with Arrow Function:</h1>
+    <pre>
+        <code>
+            const ArrowFunction = () => {
+                this.value = 42;
+            
+                this.getValue = () => {
+                    console.log(this.value);
+                };
+            };
+            
+            const arrowObj = new ArrowFunction(); // Error: ArrowFunction is not a constructor
+            
+            // The attempt to use ArrowFunction as a constructor will result in an error because arrow functions cannot be used with 'new'.    
+        </code>
+    </pre>
+    <script>
+        const ArrowFunction = () => {
+    this.value = 42;
+
+    this.getValue = () => {
+        console.log(this.value);
+    };
+};
+
+const arrowObj = new ArrowFunction(); // Error: ArrowFunction is not a constructor
+
+// The attempt to use ArrowFunction as a constructor will result in an error because arrow functions cannot be used with 'new'.
+
+    </script>
+    <h3>
+        n this example, trying to use the arrow function as a constructor with new ArrowFunction() will result in an error. Arrow functions cannot be used as constructors because they lack their own this context.
+    </h3>
+    <p>
+        <b onclick="add('A',6)">Conclusion:</b>
+Normal functions are suitable for scenarios where you want the function to have its own this context, especially when using constructors or methods tied to objects.
+
+Arrow functions are more appropriate when you want the function to inherit this from the surrounding lexical scope, providing a more predictable behavior in certain situations, such as callbacks or functions inside other functions.
+
+Understanding these distinctions is crucial for writing effective and bug-free JavaScript code.
+    </p>
+</body>
+
+</html>
+<script>
+let x = 6
+function add(a,b){
+let y = 5
+return a+b;
+}
+function dd(){
+alert(b);
+}
+
+add(4,5)
+
+let d = "hello"; 
+//The index of the last element in the string array is the same value as the string length.
+</script>

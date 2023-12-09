@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Arrow functions do not have their own this context. Instead, they inherit the this value from the enclosing
+        scope at the time the function is defined. This behavior makes arrow functions particularly useful in scenarios
+        where you want to maintain the lexical scope of this.
+    </p>
+    <script>
+        const arrowFunction = () => {
+            console.log(this.name);
+        };
+
+        const obj = {
+            name: "Object",
+            method: arrowFunction
+        };
+
+        obj.method(); // Output: undefined (or whatever 'this' is outside)
+
+        const otherObj = {
+            name: "Other Object"
+        };
+
+        arrowFunction.call(otherObj); // Output: undefined (or whatever 'this' is outside)
+
+
+    </script>
+</body>
+
+</html>

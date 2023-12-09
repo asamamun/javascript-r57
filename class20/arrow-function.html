@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>arrow function : x => x; </h1>
+    <h1>if you put () in code block you have to write "return" exclusively</h1>
+    <h3>Arrow functions were introduced in ES6.
+
+        Arrow functions allow us to write shorter function syntax</h3>
+    <script>
+        // const z = x => x + 1;
+        /* const z = function(x){
+            return x+1;
+        } */
+
+        const a = (x, y) => {
+            let z = x + y;
+            return z;
+        };
+        const aa = (x, y) => x + y;
+
+        console.log(a(6, 7));
+
+        let myFunction = (a, b) => a * b;
+        console.log(myFunction(6, 7));
+
+        let hello = function () {
+            return "Hello World!";
+        }
+
+        let hello1 = ()=> "Hello World!";
+        let hello2 = ()=> { return "Hello World!"};
+        console.log(hello1())
+        console.log(hello2())
+    </script>
+</body>
+
+</html>
