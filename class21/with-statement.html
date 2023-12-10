@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="loginForm">
+        <input type="text" name="username" id="username" placeholder="username" onfocus="setvalue()" onblur="removevalue()"> <br>
+        <input type="password" name="pass" id="pass" placeholder="password"> <br>
+        <input type="checkbox" name="remember" value="rem" id="remember"> remember me <br>
+        <input type="button" value="Login" onclick="login()">
+    </form>
+    <script>
+        function setvalue() {
+            document.getElementById("username").value = "welcome"
+        }
+        function removevalue() {
+            document.getElementById("username").value = ""
+        }
+        //document.formname.elementname.value
+        //document.forms[0].elements[0].value
+        //document.getElementById("id").value
+        function login(){
+            console.log(document.loginForm.username.value)
+                console.log(document.loginForm.pass.value)
+                console.log(document.loginForm.remember.checked)
+                console.log(document.loginForm.remember.value)
+            /* with(document.loginForm){
+                console.log(username.value)
+                console.log(pass.value)
+                console.log(remember.value)
+            } */  
+            document.loginForm.username.value = "admin";          
+        }
+    </script>
+</body>
+</html>
