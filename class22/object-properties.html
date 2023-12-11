@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //"name" property should not be used in object. It has special meaning 
+        let student = {
+            stname: "Hero",
+            id: "101",
+            course: "WDPF",
+            study: function(){ return "Studying " + this.course },
+            overall1 :"I am " + this.stname + " studying " + this.course + "." ,
+            overall2 :function(){return "I am " + this.stname + " studying " + this.course;}
+        }
+
+        document.write("I am " + student.stname + ". My student id is " + student.id + ". I am "  + student.study() + ".");
+        document.write("<br>");
+        document.write(student.overall1 + "<br>");//you should not access properties directly inside an object , rather you should use function to access properties
+        document.write(student.overall2() + "<br>");
+    </script>
+</body>
+</html>

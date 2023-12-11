@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>form value in new window</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="a">
+        <label>User name</label>
+        <input type="text" name="uname" id="uname" /><br>
+        <label>Contact</label>
+        <input type="text" id="contact" /><br>
+        <label>Remark</label>
+        <textarea id="remark"></textarea><br>
+        <label>Sex</label>
+        Male<input type="radio" name="s" value="male"> |
+        Female<input type="radio" name="s" value="female"><br>
+        <label>Course</label>
+        NT: <input type="checkbox" name="course" value="nt"> |
+        WPSI: <input type="checkbox" name="course" value="wpsi"> |
+        DDD: <input type="checkbox" name="course" value="ddd"> |
+        J2EE: <input type="checkbox" name="course" value="j2ee"> <br>
+        <label>Location</label>
+        <select id="loc">
+            <option value="-1">Select</option>
+            <option>Banani</option>
+            <option>Dhanmondi</option>
+            <option>Mirpur</option>
+        </select>
+        <br>
+        <input type="button" value="submit" onClick="getval()">
+    </form>
+    <script>
+        class MyForm {
+            errors = [];
+            constructor(n=null, c=null, r=null, s=null, co=null, loc=null) {
+                //properties
+                this.name = n;
+                this.contact = c;
+                this.remarks = r;
+                this.sex = s;
+                this.course = co;
+                this.location = loc;
+            }
+            validate() {
+                if (!this.name.length) { this.errors['name'] = "Name cannot be empty"; }
+                if (!this.contact.length) { this.errors['contact'] = "Contact cannot be empty"; }
+                if (!this.remarks.length) { this.errors['remarks'] = "Remarks cannot be empty"; }
+                if (!this.sex) { this.errors['sex'] = "Please select your sex"; }
+                if (!this.course.length) { this.errors['course'] = "Please select a course"; }
+                if (this.location == "-1") { this.errors['location'] = "Please select a location"; }
+                // console.log(this.errors);
+                if (!Object.keys(this.errors).length) {
+                    // alert("Your form is valid.");
+                    return true;
+                }
+                else {
+                    console.log(this.errors);
+                    return false;
+                }
+            }
+            show() {
+                alert("form is valid. now show the values in new window")
+                //show the form value in new window
+            }
+            error() {
+                alert("form is invalid. show the error messages in a div");
+                //show error message from this.errors in a div
+            }
+        }
+
+        function getval() {
+            let name = document.getElementById("uname").value;
+            let contact = document.getElementById("contact").value;
+            let remark = document.getElementById("remark").value;
+            let sex = document.a.s.value;
+            let course = [];
+            var markedCheckbox = document.querySelectorAll('input[name="course"]:checked');
+            for (var checkbox of markedCheckbox) {
+                course.push(checkbox.value);
+            }
+            let location = document.getElementById("loc").value;
+            //create form object
+            let form = new MyForm(name, contact, remark, sex, course, location);
+            //if validate return true form is valid otherwise invalid
+            if (form.validate()) {
+                //calling show method
+                form.show();
+            }
+            else {
+                //calling error method
+                form.error();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*         let s = "abcdefg";
+        console.log(s.indexOf(".")); */
+       class CheckEmail{
+            constructor(em){ this.email = em;}
+            dotcheck(){ 
+                if(this.email.indexOf(".") != "-1") return true;
+                else return false;
+            }
+            attcheck(){
+                if(this.email.indexOf("@") != "-1") return true;
+                else return false;
+            }
+        }
+        let email = prompt("Enter your email address");
+        let check = new CheckEmail(email);
+        if(check.dotcheck() && check.attcheck()){ alert("Valid!!");}
+        else alert("Invalid");
+
+    </script>
+</body>
+</html>
