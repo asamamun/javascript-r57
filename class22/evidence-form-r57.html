@@ -68,8 +68,18 @@
                 }
             }
             show() {
-                alert("form is valid. now show the values in new window")
+                //alert("form is valid. now show the values in new window")
                 //show the form value in new window
+            var newwindow=window.open("","","width=400,height=250");
+            var newwindow2=window.open("","","width=400,height=250");
+ 		    var s=newwindow.document;		
+		    s.write("Name: " + this.name + "<br>");
+		    s.write("Contact: " + this.contact + "<br>");
+		    s.write("Remarks: " + this.remarks + "<br>");
+		    s.write("Sex: " + this.sex + "<br>");
+		    s.write("Course: " + this.course + "<br>");
+		    s.write("location: " + this.location + "<br>");
+		    
             }
             error() {
                 alert("form is invalid. show the error messages in a div");

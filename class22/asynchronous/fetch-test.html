@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" name="" id="" accept="image/*;capture=camera">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/V_Kr9OSfDeU?si=W03g4_jQSwVPFkNa"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    <button onclick="fetchalldata()">Fetch All Data</button>
+    <input type="text" id="pid">
+    <button onclick="fetchsingledata()">Single Product</button>
+    <hr>
+    <div class="productContainer"></div>
+    <script>
+        function fetchalldata() {
+            fetch('https://dummyjson.com/products')
+                .then(res => res.json())
+                .then(d => console.log(d));
+        }
+        function fetchsingledata() {
+            let id = document.getElementById('pid').value;
+            fetch('https://dummyjson.com/products/' + id)
+                .then(res => res.json())
+                .then(d => console.log(d));
+        }
+    </script>
+</body>
+
+</html>
