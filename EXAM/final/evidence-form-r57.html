@@ -9,12 +9,6 @@
             width: 100px;
             margin-bottom: 10px;
         }
-        
-        input[name="course"]:checked {            
-            accent-color: green;
-            outline: 5px dotted red;
-            mix-blend-mode: color-dodge;
-        }
     </style>
 </head>
 
@@ -42,7 +36,6 @@
             <option>Mirpur</option>
         </select>
         <br>
-        <!-- dont use input type "submit" -->
         <input type="button" value="submit" onClick="getval()">
     </form>
     <script>
@@ -57,7 +50,6 @@
                 this.course = co;
                 this.location = loc;
             }
-            //validate return true or false
             validate() {
                 if (!this.name.length) { this.errors['name'] = "Name cannot be empty"; }
                 if (!this.contact.length) { this.errors['contact'] = "Contact cannot be empty"; }
@@ -70,14 +62,16 @@
                     // alert("Your form is valid.");
                     return true;
                 }
-                else {                    
+                else {
+                    console.log(this.errors);
                     return false;
                 }
             }
             show() {
                 //alert("form is valid. now show the values in new window")
                 //show the form value in new window
-            var newwindow=window.open("","","width=400,height=250");            
+            var newwindow=window.open("","","width=400,height=250");
+            var newwindow2=window.open("","","width=400,height=250");
  		    var s=newwindow.document;		
 		    s.write("Name: " + this.name + "<br>");
 		    s.write("Contact: " + this.contact + "<br>");
@@ -88,10 +82,8 @@
 		    
             }
             error() {
-                alert(Object.keys(this.errors) + " fields has error");
-                /* for (const key in this.errors) {
-                   alert(key +" : "+ this.errors[key]); 
-                }  */              
+                alert("form is invalid. show the error messages in a div");
+                //show error message from this.errors in a div
             }
         }
 
@@ -102,7 +94,6 @@
             let sex = document.a.s.value;
             let course = [];
             var markedCheckbox = document.querySelectorAll('input[name="course"]:checked');
-            // console.log(markedCheckbox); return;
             for (var checkbox of markedCheckbox) {
                 course.push(checkbox.value);
             }

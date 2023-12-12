@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>form value in new window</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="dataTable">
+        <label>User name</label>
+        <input type="text" name="username" id="uname" /><br>
+        <label>Contact</label>
+        <input type="text" id="contact" name="contact" /><br>
+        <label>Remark</label>
+        <textarea id="remark" name="remark"></textarea><br>
+        <label>Sex</label>
+        Male<input type="radio" name="sex" value="male"> |
+        Female<input type="radio" name="sex" value="female"><br>
+        <label>Course</label>
+        NT: <input type="checkbox" name="course" value="nt"> |
+        WPSI: <input type="checkbox" name="course" value="wpsi"> |
+        DDD: <input type="checkbox" name="course" value="ddd"> |
+        J2EE: <input type="checkbox" name="course" value="j2ee"> <br>
+        <label>Location</label>
+        <select id="location" name="location">
+            <option value="-1">Select</option>
+            <option value="Banani">Banani</option>
+            <option value="Dhanmondi">Dhanmondi</option>
+            <option value="Mirpur">Mirpur</option>
+        </select>
+        <br>
+        <input type="button" value="submit" onClick="MyForm.getval()">
+    </form>
+    <script>
+        class MyForm {
+            static errors = [];
+            static getval() {
+                this.username = document.dataTable.username.value;
+                this.validate(this.username, "username");
+                this.contact = document.dataTable.contact.value;
+                this.validate(this.contact, "contact");
+                this.remarks = document.dataTable.remark.value;
+                this.validate(this.remarks, "remarks");
+                this.sex = document.dataTable.sex.value;
+                this.validate(this.sex, "sex");
+                this.course = [];
+                this.markedCheckbox = document.querySelectorAll('input[name="course"]:checked');
+                for (var checkbox of this.markedCheckbox) {
+                    this.course.push(checkbox.value);
+                }
+                this.validate(this.course, "course");
+                this.location = document.dataTable.location.value;
+                this.validate(this.location, "location");
+                if (!Object.keys(this.errors).length) {
+                    var win = window.open("", "", "width=400,height=250");
+                    win.document.write(`
+                        <ol>
+                            <li>Name: ${this.username}</li>
+                            <li>Contact: ${this.contact}</li>
+                            <li>Remarks: ${this.remarks}</li>
+                            <li>Sex: ${this.sex}</li>
+                            <li>Course: ${this.course}</li>
+                            <li>Location: ${this.location}</li>
+                        </ol>
+                    `);
+                }else {
+                    //alert(this.errors[0]);
+                    alert("you must enter the all value.");
+                }
+            }
+            static validate(dataValue, dataName = "filed") {
+                let i = 0;
+                if (!dataValue.length || dataValue == -1) { 
+                    this.errors[i++] = dataName+" cannot be empty"; 
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

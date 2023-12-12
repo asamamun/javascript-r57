@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" onblur="flag(this.value)">
+    <div id="flag"></div>
+    <script>
+        function flag(v){
+            console.log(getFlagEmoji(v));
+            document.getElementById("flag").innerHTML = getFlagEmoji(v);
+        }
+        function getFlagEmoji(countryCode) {
+            const codePoints = countryCode
+                .toUpperCase()
+                .split('')
+                .map(char => 127397 + char.charCodeAt());
+            return String.fromCodePoint(...codePoints);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMAIL</title>
+</head>
+<body>
+    <script>
+        var userEmail= prompt("Enter valid Email:");
+        class emailCHeck{
+            constructor(em){
+                this.email=em;
+                if(this.email.indexOf("@")==-1){
+                    alert("Invalid Email !! @ is missing.");
+                }
+               else if(this.email.indexOf(".")==-1){
+                    alert("Invalid Email !! Dot(.) is missing.");
+                }
+                else{
+                    alert("Your Email Address Is Correct");
+                }
+            }
+        }
+        let email= new emailCHeck(userEmail);
+    </script>
+    
+</body>
+</html>
