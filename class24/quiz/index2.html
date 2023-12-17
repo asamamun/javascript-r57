@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <style>
+    /* Add your styling here */
+  </style>
+</head>
+<body>
+  <div id="quiz-container"></div>
+
+  <script>
+    // Your JSON data
+    var quizData = {
+      "question": "What is JavaScript primarily used for?",
+      "options": [
+        {"text": "Creating animations", "isCorrect": false},
+        {"text": "Styling web pages", "isCorrect": false},
+        {"text": "Enhancing interactivity in web browsers", "isCorrect": true},
+        {"text": "Managing databases", "isCorrect": false}
+      ],
+      "sn": "001"
+    };
+
+    // Function to generate HTML from JSON
+    function generateQuizHTML(data) {
+      var html = '<h3>' + data.question + '</h3>';
+      
+      data.options.forEach(function(option, index) {
+        html += '<label><input type="radio" name="answer" value="' + index + '"> ' + option.text + '</label><br>';
+      });
+
+      return html;
+    }
+
+    // Function to retrieve selected answer
+    function getSelectedAnswer() {
+      var selectedOption = document.querySelector('input[name="answer"]:checked');
+      return selectedOption ? parseInt(selectedOption.value) : null;
+    }
+
+    // Render the quiz on the page
+    document.getElementById('quiz-container').innerHTML = generateQuizHTML(quizData);
+
+    // Example of how to get the selected answer
+    document.addEventListener('submit', function(event) {
+      event.preventDefault();
+      var selectedAnswerIndex = getSelectedAnswer();
+      
+      if (selectedAnswerIndex !== null) {
+        var selectedAnswer = quizData.options[selectedAnswerIndex];
+        console.log("Selected Answer: ", selectedAnswer.text);
+      } else {
+        console.log("No answer selected.");
+      }
+    });
+  </script>
+</body>
+</html>

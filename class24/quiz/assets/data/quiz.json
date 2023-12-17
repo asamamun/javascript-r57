@@ -1,0 +1,204 @@
+{
+  "questions": [
+    {
+      "question": "What is JavaScript primarily used for?",
+      "options": [
+        "Creating animations",
+        "Styling web pages",
+        "Enhancing interactivity in web browsers",
+        "Managing databases"
+      ],
+      "correctAnswer": "Enhancing interactivity in web browsers",
+      "sn": "001"
+    },
+    {
+      "question": "Which keyword is used to declare variables in JavaScript?",
+      "options": ["let", "const", "var", "variable"],
+      "correctAnswer": "var",
+      "sn": "002"
+    },
+    {
+      "question": "What does the term 'DOM' stand for?",
+      "options": [
+        "Document Object Model",
+        "Data Object Model",
+        "Dynamic Object Model",
+        "Document Oriented Model"
+      ],
+      "correctAnswer": "Document Object Model",
+      "sn": "003"
+    },
+    {
+      "question": "How do you write a single-line comment in JavaScript?",
+      "options": [
+        "// This is a comment",
+        "# This is a comment",
+        "/* This is a comment */",
+        "!-- This is a comment --"
+      ],
+      "correctAnswer": "// This is a comment",
+      "sn": "004"
+    },
+    {
+      "question": "Which function is used to print content to the console?",
+      "options": [
+        "console.print()",
+        "print()",
+        "log()",
+        "write()"
+      ],
+      "correctAnswer": "console.log()",
+      "sn": "005"
+    },
+    {
+      "question": "What is the purpose of the 'typeof' operator?",
+      "options": [
+        "To check the type of a variable",
+        "To declare a variable",
+        "To perform mathematical operations",
+        "To create a new object"
+      ],
+      "correctAnswer": "To check the type of a variable",
+      "sn": "006"
+    },
+    {
+      "question": "Which of the following is not a JavaScript data type?",
+      "options": ["boolean", "string", "float", "char"],
+      "correctAnswer": "char",
+      "sn": "007"
+    },
+    {
+      "question": "What is the purpose of the 'this' keyword in JavaScript?",
+      "options": [
+        "Referring to the current object",
+        "Creating a new object",
+        "Referring to the parent object",
+        "Referring to a global object"
+      ],
+      "correctAnswer": "Referring to the current object",
+      "sn": "008"
+    },
+    {
+      "question": "What does JSON stand for?",
+      "options": [
+        "JavaScript Object Notation",
+        "JavaScript Oriented Networking",
+        "Java Standard Object Notation",
+        "Java Scripted Object Naming"
+      ],
+      "correctAnswer": "JavaScript Object Notation",
+      "sn": "009"
+    },
+    {
+      "question": "How do you create a new array in JavaScript?",
+      "options": [
+        "var newArray = []",
+        "new Array()",
+        "array()",
+        "createArray()"
+      ],
+      "correctAnswer": "var newArray = []",
+      "sn": "010"
+    },
+    {
+      "question": "What does the acronym AJAX stand for?",
+      "options": [
+        "Asynchronous JavaScript and XML",
+        "Advanced JavaScript and XML",
+        "Asynchronous JSON and XML",
+        "Advanced JSON and XML"
+      ],
+      "correctAnswer": "Asynchronous JavaScript and XML",
+      "sn": "011"
+    },
+    {
+      "question": "How do you check if a variable is undefined in JavaScript?",
+      "options": [
+        "if (variable == null)",
+        "if (typeof variable === 'undefined')",
+        "if (variable === undefined)",
+        "Both B and C"
+      ],
+      "correctAnswer": "Both B and C",
+      "sn": "012"
+    },
+    {
+      "question": "What is the purpose of the 'NaN' value in JavaScript?",
+      "options": [
+        "Not a Node",
+        "Not a Null",
+        "Not a Number",
+        "Not a Namespace"
+      ],
+      "correctAnswer": "Not a Number",
+      "sn": "013"
+    },
+    {
+      "question": "Which method is used to add elements to the end of an array?",
+      "options": [
+        "append()",
+        "addToEnd()",
+        "push()",
+        "concat()"
+      ],
+      "correctAnswer": "push()",
+      "sn": "014"
+    },
+    {
+      "question": "What is the purpose of the 'splice' method in JavaScript?",
+      "options": [
+        "To remove elements from an array",
+        "To add elements to an array",
+        "To sort an array",
+        "To reverse an array"
+      ],
+      "correctAnswer": "To remove elements from an array",
+      "sn": "015"
+    },
+    {
+      "question": "Which of the following is a falsy value in JavaScript?",
+      "options": ["null", "undefined", "0", "All of the above"],
+      "correctAnswer": "All of the above",
+      "sn": "016"
+    },
+    {
+      "question": "What is the purpose of the 'querySelector' method?",
+      "options": [
+        "To select the first element that matches a specified CSS selector",
+        "To select all elements that match a specified CSS selector",
+        "To select the last element that matches a specified CSS selector",
+        "To select elements based on their tag name"
+      ],
+      "correctAnswer": "To select the first element that matches a specified CSS selector",
+      "sn": "017"
+    },
+    {
+      "question": "How do you declare a constant variable in JavaScript?",
+      "options": ["let", "const", "var", "constant"],
+      "correctAnswer": "const",
+      "sn": "018"
+    },
+    {
+      "question": "What is the purpose of the 'map' function in JavaScript?",
+      "options": [
+        "To create a new array with the results of a provided function on every element",
+        "To filter elements in an array based on a condition",
+        "To sort elements in an array",
+        "To remove elements from an array"
+      ],
+      "correctAnswer": "To create a new array with the results of a provided function on every element",
+      "sn": "019"
+    },
+    {
+      "question": "How can you prevent the default behavior of an event in JavaScript?",
+      "options": [
+        "event.preventDefault()",
+        "event.stopPropagation()",
+        "event.stop()",
+        "event.cancel()"
+      ],
+      "correctAnswer": "event.preventDefault()",
+      "sn": "020"
+    }
+  ]
+}

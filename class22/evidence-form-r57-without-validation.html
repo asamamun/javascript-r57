@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>form value in new window</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        
+        input[name="course"]:checked {            
+            accent-color: green;
+            outline: 5px dotted red;
+            mix-blend-mode: color-dodge;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="a">
+        <label>User name</label>
+        <input type="text" name="uname" id="uname" /><br>
+        <label>Contact</label>
+        <input type="text" id="contact" /><br>
+        <label>Remark</label>
+        <textarea id="remark"></textarea><br>
+        <label>Sex</label>
+        Male<input type="radio" name="s" value="male"> |
+        Female<input type="radio" name="s" value="female"><br>
+        <label>Course</label>
+        NT: <input type="checkbox" name="course" value="nt"> |
+        WPSI: <input type="checkbox" name="course" value="wpsi"> |
+        DDD: <input type="checkbox" name="course" value="ddd"> |
+        J2EE: <input type="checkbox" name="course" value="j2ee"> <br>
+        <label>Location</label>
+        <select id="loc">
+            <option value="-1">Select</option>
+            <option>Banani</option>
+            <option>Dhanmondi</option>
+            <option>Mirpur</option>
+        </select>
+        <br>
+        <!-- dont use input type "submit" -->
+        <input type="button" value="submit" onClick="getval()">
+    </form>
+    <script>
+        class MyForm {
+            errors = [];
+            constructor(n=null, c=null, r=null, s=null, co=null, loc=null) {
+                //properties
+                this.name = n;
+                this.contact = c;
+                this.remarks = r;
+                this.sex = s;
+                this.course = co;
+                this.location = loc;
+            }            
+            show() {
+                //alert("form is valid. now show the values in new window")
+                //show the form value in new window
+            var newwindow=window.open("","","width=400,height=250");            
+ 		    var s=newwindow.document;		
+		    s.write("Name: " + this.name + "<br>");
+		    s.write("Contact: " + this.contact + "<br>");
+		    s.write("Remarks: " + this.remarks + "<br>");
+		    s.write("Sex: " + this.sex + "<br>");
+		    s.write("Course: " + this.course + "<br>");
+		    s.write("location: " + this.location + "<br>");		    
+            }
+        }
+        function getval() {
+            let name = document.getElementById("uname").value;
+            let contact = document.getElementById("contact").value;
+            let remark = document.getElementById("remark").value;
+            let sex = document.a.s.value;
+            let course = [];
+            var markedCheckbox = document.querySelectorAll('input[name="course"]:checked');
+            // console.log(markedCheckbox); return;
+            for (var checkbox of markedCheckbox) {
+                course.push(checkbox.value);
+            }
+            let location = document.getElementById("loc").value;
+            //create form object
+            let form = new MyForm(name, contact, remark, sex, course, location);
+            //if validate return true form is valid otherwise invalid            
+                form.show();
+           
+        }
+    </script>
+</body>
+</html>

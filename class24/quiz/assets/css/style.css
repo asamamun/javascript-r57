@@ -1,0 +1,22 @@
+*{
+    
+}
+p{
+    /*line-height: 10px;*/
+}
+#introLeft{
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 700;
+}
+table{
+    border: 1px solid black;
+}
+tr{}
+td{
+    /*line-height: 10px;*/
+}
+.introFirst{
+    text-align: center;
+    vertical-align: middle;
+}

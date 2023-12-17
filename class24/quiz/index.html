@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body style="background-color: aliceblue;">
+    <div class="container mt-4">
+        <table class="table">
+            <tr>
+                <td class="introFirst" style="text-align: left;"><span id="introLeft">quiz</span></td>
+                <td class="introFirst" style="text-align: center;"><img
+                        src="assets/img/idb_bisew_logo-removebg-preview.png" style="width:150px;margin-left: 100px;" />
+                </td>
+                <td class="introFirst" style="text-align: right;"><img
+                        src="assets/img/Screenshot_1-removebg-preview.png" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p>Batch: </p>
+                    <p>Date: </p>
+                    <p>Total Time : 30 Minutes</p>
+                    <p>Total Marks: 50</p>
+                </td>
+                <td style="text-align: left; vertical-align: middle;">
+                    <p>Module: </p>
+                    <p>Instructor: </p>
+                    <p>Mark Obtained: </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Trainee Name : </td>
+                <td>Trainee ID: </td>
+            </tr>
+        </table>
+    </div>
+    <div class="container mt-3">
+        <form name="examForm">
+            <div class="row" id="queLoop">
+                
+            </div>
+            <div class="row mt-4 p-2">
+                <input type="button" name="button" value="submit" class="btn btn-secondary btn-lg btn-block" onclick="getResult()"/>
+            </div>
+        </form>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <script>
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function () {
+            const myObj = JSON.parse(this.responseText);
+            let queLoop = "";
+            myObj.questions.forEach((e, i) => {
+                if (i <= 19) {
+                    queLoop += `
+                    <div class="col-md-6" id="QueasionLoop">
+                        <div class="">
+                            <div class="card-body">
+                                <p class="card-text"><b>${i + 1}. ${e.question}</b></p>
+                                <div class="" style="padding-left:15px;">
+                                    <input type="radio" name="name_${e.sn}" id="a${e.sn}" value="${e.options[0]}">
+                                    <label for="a${e.sn}">${e.options[0]}</label><br />
+                                    <input type="radio" name="name_${e.sn}" id="b${e.sn}" value="${e.options[1]}">
+                                    <label for="b${e.sn}">${e.options[1]}</label><br />
+                                    <input type="radio" name="name_${e.sn}" id="c${e.sn}" value="${e.options[2]}">
+                                    <label for="c${e.sn}">${e.options[2]}</label><br />
+                                    <input type="radio" name="name_${e.sn}" id="d${e.sn}" value="${e.options[3]}">
+                                    <label for="d${e.sn}">${e.options[3]}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+            });
+            document.getElementById("queLoop").innerHTML = queLoop;
+        };
+        function getResult(){
+            let html = "";
+            let result = 0;
+            const myObj = JSON.parse(xmlhttp.responseText);
+            myObj.questions.forEach(e => {
+                html = document.examForm.elements['name_'+e.sn].value;
+                if(html == e.correctAnswer){
+                    result++;
+                }
+            });
+            alert(result);
+        }
+        xmlhttp.open("GET", "assets/data/quiz.json");
+        xmlhttp.send();
+    </script>
+</body>
+
+</html>
